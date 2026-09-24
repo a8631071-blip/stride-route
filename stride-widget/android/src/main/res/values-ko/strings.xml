@@ -1,0 +1,7 @@
+<resources>
+  <string name="stride_widget_description">StrideRoute 오늘 걸음 수</string>
+  <string name="stride_widget_title">StrideRoute · 오늘</string>
+  <string name="stride_widget_steps_zero">0걸음</string>
+  <string name="stride_widget_goal_zero" formatted="false">목표 10,000 · 0%</string>
+  <string name="stride_widget_not_synced">동기화 안 됨</string>
+</resources>

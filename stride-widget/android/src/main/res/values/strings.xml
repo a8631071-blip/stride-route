@@ -1,0 +1,7 @@
+<resources>
+  <string name="stride_widget_description">步跡今日步數</string>
+  <string name="stride_widget_title">步跡 · 今天</string>
+  <string name="stride_widget_steps_zero">0 步</string>
+  <string name="stride_widget_goal_zero" formatted="false">目標 10,000 · 0%</string>
+  <string name="stride_widget_not_synced">尚未同步</string>
+</resources>

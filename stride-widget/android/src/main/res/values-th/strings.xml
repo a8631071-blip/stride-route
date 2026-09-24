@@ -1,0 +1,7 @@
+<resources>
+  <string name="stride_widget_description">StrideRoute จำนวนก้าววันนี้</string>
+  <string name="stride_widget_title">StrideRoute · วันนี้</string>
+  <string name="stride_widget_steps_zero">0 ก้าว</string>
+  <string name="stride_widget_goal_zero" formatted="false">เป้าหมาย 10,000 · 0%</string>
+  <string name="stride_widget_not_synced">ยังไม่ซิงก์</string>
+</resources>

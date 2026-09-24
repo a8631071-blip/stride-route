@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/stride_widget_root"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:paddingLeft="10dp"
+  android:paddingTop="7dp"
+  android:paddingRight="10dp"
+  android:paddingBottom="6dp"
+  android:background="#FFFFFF">
+  <TextView
+    android:id="@+id/stride_widget_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:includeFontPadding="false"
+    android:maxLines="1"
+    android:text="@string/stride_widget_title"
+    android:textColor="#1479FF"
+    android:textSize="10sp"
+    android:textStyle="bold" />
+  <TextView
+    android:id="@+id/stride_widget_steps"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:includeFontPadding="false"
+    android:maxLines="1"
+    android:text="@string/stride_widget_steps_zero"
+    android:textColor="#13202D"
+    android:textSize="22sp"
+    android:textStyle="bold" />
+  <TextView
+    android:id="@+id/stride_widget_meta"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:includeFontPadding="false"
+    android:maxLines="1"
+    android:text="@string/stride_widget_goal_zero"
+    android:textColor="#687586"
+    android:textSize="9sp" />
+  <TextView
+    android:id="@+id/stride_widget_updated"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:includeFontPadding="false"
+    android:maxLines="1"
+    android:text="@string/stride_widget_not_synced"
+    android:textColor="#9AA5B1"
+    android:textSize="8sp" />
+</LinearLayout>
