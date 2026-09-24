@@ -1,0 +1,66 @@
+[
+  {
+    "file": "01_開始逛街.wav",
+    "tokens": [
+      "state_shopping_start"
+    ]
+  },
+  {
+    "file": "02_空點空一公里.wav",
+    "tokens": [
+      "num_zero",
+      "decimal_0",
+      "num_one_compound",
+      "unit_kilometer"
+    ]
+  },
+  {
+    "file": "03_運動暫停.wav",
+    "tokens": [
+      "state_pause"
+    ]
+  },
+  {
+    "file": "04_運動結束.wav",
+    "tokens": [
+      "state_end"
+    ]
+  },
+  {
+    "file": "05_消耗120大卡.wav",
+    "tokens": [
+      "phrase_calories",
+      "num_one_measure",
+      "num_hundred",
+      "num_two_compound",
+      "num_ten",
+      "unit_kcal"
+    ]
+  },
+  {
+    "file": "06_組合壓力測試.wav",
+    "tokens": [
+      "word_already",
+      "word_workout",
+      "num_five",
+      "unit_minutes",
+      "pause_medium",
+      "word_already",
+      "word_walk",
+      "num_zero",
+      "decimal_0",
+      "num_one_compound",
+      "unit_kilometer",
+      "pause_medium",
+      "word_altogether",
+      "num_one_measure",
+      "num_thousand",
+      "num_two_measure",
+      "num_hundred",
+      "num_three",
+      "num_ten",
+      "num_four",
+      "unit_step"
+    ]
+  }
+]

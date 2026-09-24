@@ -1,0 +1,199 @@
+{
+  "mode": "zh-nan-mixed",
+  "display_name": "華台混合",
+  "definition": "刻意華語＋台語 code-switching；不是缺 token 的錯誤 fallback。",
+  "rules": {
+    "encouragement": "zh-TW system TTS",
+    "structure": "nan-TW packaged WAV",
+    "numbers": "nan-TW packaged WAV",
+    "units": "nan-TW packaged WAV",
+    "pure_taigi_fallback_to_mandarin": false
+  },
+  "encouragements": [
+    {
+      "key": "enc_great",
+      "zh_text": "好棒喔",
+      "nan_asset": "wav/enc_great.wav"
+    },
+    {
+      "key": "enc_amazing",
+      "zh_text": "好厲害",
+      "nan_asset": "wav/enc_amazing.wav"
+    },
+    {
+      "key": "enc_awesome",
+      "zh_text": "太棒了",
+      "nan_asset": "wav/enc_awesome.wav"
+    },
+    {
+      "key": "enc_good",
+      "zh_text": "很棒喔",
+      "nan_asset": "wav/enc_good.wav"
+    },
+    {
+      "key": "enc_not_bad",
+      "zh_text": "不錯喔",
+      "nan_asset": "wav/enc_not_bad.wav"
+    },
+    {
+      "key": "enc_very_good",
+      "zh_text": "很不錯",
+      "nan_asset": "wav/enc_very_good.wav"
+    },
+    {
+      "key": "enc_can",
+      "zh_text": "可以喔",
+      "nan_asset": "wav/enc_can.wav"
+    },
+    {
+      "key": "enc_you_can",
+      "zh_text": "可以的",
+      "nan_asset": "wav/enc_you_can.wav"
+    },
+    {
+      "key": "enc_you_can_do_it",
+      "zh_text": "你可以的",
+      "nan_asset": "wav/enc_you_can_do_it.wav"
+    },
+    {
+      "key": "enc_go",
+      "zh_text": "加油",
+      "nan_asset": "wav/enc_go.wav"
+    },
+    {
+      "key": "enc_go_again",
+      "zh_text": "再加油",
+      "nan_asset": "wav/enc_go_again.wav"
+    },
+    {
+      "key": "enc_keep_going",
+      "zh_text": "繼續加油",
+      "nan_asset": "wav/enc_keep_going.wav"
+    },
+    {
+      "key": "enc_try_more",
+      "zh_text": "再努力",
+      "nan_asset": "wav/enc_try_more.wav"
+    },
+    {
+      "key": "enc_try_little_more",
+      "zh_text": "再努力一下",
+      "nan_asset": "wav/enc_try_little_more.wav"
+    },
+    {
+      "key": "enc_continue",
+      "zh_text": "繼續喔",
+      "nan_asset": "wav/enc_continue.wav"
+    },
+    {
+      "key": "enc_keep_it",
+      "zh_text": "繼續保持",
+      "nan_asset": "wav/enc_keep_it.wav"
+    },
+    {
+      "key": "enc_hold",
+      "zh_text": "撐住",
+      "nan_asset": "wav/enc_hold.wav"
+    },
+    {
+      "key": "enc_hold_little",
+      "zh_text": "撐一下",
+      "nan_asset": "wav/enc_hold_little.wav"
+    },
+    {
+      "key": "enc_slow",
+      "zh_text": "慢慢來",
+      "nan_asset": "wav/enc_slow.wav"
+    },
+    {
+      "key": "enc_steady",
+      "zh_text": "穩穩來",
+      "nan_asset": "wav/enc_steady.wav"
+    },
+    {
+      "key": "enc_little_more",
+      "zh_text": "再一下",
+      "nan_asset": "wav/enc_little_more.wav"
+    },
+    {
+      "key": "enc_tiny_more",
+      "zh_text": "再一點點",
+      "nan_asset": "wav/enc_tiny_more.wav"
+    },
+    {
+      "key": "enc_almost",
+      "zh_text": "快到了",
+      "nan_asset": "wav/enc_almost.wav"
+    },
+    {
+      "key": "enc_nearly",
+      "zh_text": "就快到了",
+      "nan_asset": "wav/enc_nearly.wav"
+    },
+    {
+      "key": "enc_small_gap",
+      "zh_text": "差一點點",
+      "nan_asset": "wav/enc_small_gap.wav"
+    },
+    {
+      "key": "enc_very_possible",
+      "zh_text": "很可以喔",
+      "nan_asset": "wav/enc_very_possible.wav"
+    },
+    {
+      "key": "enc_progress",
+      "zh_text": "有進步喔",
+      "nan_asset": "wav/enc_progress.wav"
+    },
+    {
+      "key": "enc_today_good",
+      "zh_text": "今天很棒",
+      "nan_asset": "wav/enc_today_good.wav"
+    },
+    {
+      "key": "enc_nice_work",
+      "zh_text": "做得很好",
+      "nan_asset": "wav/enc_nice_work.wav"
+    },
+    {
+      "key": "enc_keep",
+      "zh_text": "保持住",
+      "nan_asset": "wav/enc_keep.wav"
+    },
+    {
+      "key": "enc_hard_work",
+      "zh_text": "辛苦了",
+      "nan_asset": "wav/enc_hard_work.wav"
+    },
+    {
+      "key": "enc_finish",
+      "zh_text": "完成了",
+      "nan_asset": "wav/enc_finish.wav"
+    }
+  ],
+  "example": {
+    "spoken": "好棒喔，已經走三公里",
+    "segments": [
+      {
+        "source": "zh-TW-system-tts",
+        "text": "好棒喔"
+      },
+      {
+        "source": "nan-asset",
+        "key": "word_already"
+      },
+      {
+        "source": "nan-asset",
+        "key": "word_walk"
+      },
+      {
+        "source": "nan-asset",
+        "key": "num_three"
+      },
+      {
+        "source": "nan-asset",
+        "key": "unit_kilometer"
+      }
+    ]
+  }
+}

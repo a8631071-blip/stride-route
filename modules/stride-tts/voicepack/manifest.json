@@ -1,0 +1,647 @@
+{
+  "version": 22,
+  "language": "nan-TW",
+  "architecture": "composable-offline-human-voicepack",
+  "sample_rate": 22050,
+  "channels": 1,
+  "pcm": "s16le",
+  "token_count": 102,
+  "distance_policy": {
+    "unit": "kilometer_only",
+    "precision": "up_to_3_decimals"
+  },
+  "decimal_policy": {
+    "deprecated_token": "decimal_point",
+    "deprecated_token_present": false,
+    "first_fraction_digit_tokens": [
+      "decimal_0",
+      "decimal_1",
+      "decimal_2",
+      "decimal_3",
+      "decimal_4",
+      "decimal_5",
+      "decimal_6",
+      "decimal_7",
+      "decimal_8",
+      "decimal_9"
+    ]
+  },
+  "runtime": {
+    "playback_speed": 1.0,
+    "crossfade_ms": 0,
+    "pause_short_ms": 35,
+    "pause_medium_ms": 70,
+    "pause_long_ms": 110
+  },
+  "tokens": [
+    {
+      "key": "state_walk_start",
+      "hanji": "開始健行",
+      "kind": "state",
+      "wav": "raw/state_walk_start.wav"
+    },
+    {
+      "key": "state_shopping_start",
+      "hanji": "開始逛街",
+      "kind": "state",
+      "wav": "raw/state_shopping_start.wav"
+    },
+    {
+      "key": "state_run_start",
+      "hanji": "開始跑步",
+      "kind": "state",
+      "wav": "raw/state_run_start.wav"
+    },
+    {
+      "key": "state_bike_start",
+      "hanji": "開始騎車",
+      "kind": "state",
+      "wav": "raw/state_bike_start.wav"
+    },
+    {
+      "key": "state_pause",
+      "hanji": "運動暫停",
+      "kind": "state",
+      "wav": "raw/state_pause.wav"
+    },
+    {
+      "key": "state_resume",
+      "hanji": "繼續運動",
+      "kind": "state",
+      "wav": "raw/state_resume.wav"
+    },
+    {
+      "key": "state_end",
+      "hanji": "運動結束",
+      "kind": "state",
+      "wav": "raw/state_end.wav"
+    },
+    {
+      "key": "word_already",
+      "hanji": "已經",
+      "kind": "word",
+      "wav": "raw/word_already.wav"
+    },
+    {
+      "key": "word_today",
+      "hanji": "今仔日",
+      "kind": "word",
+      "wav": "raw/word_today.wav"
+    },
+    {
+      "key": "word_total",
+      "hanji": "總共",
+      "kind": "word",
+      "wav": "raw/word_total.wav"
+    },
+    {
+      "key": "word_altogether",
+      "hanji": "總共",
+      "kind": "word",
+      "wav": "raw/word_altogether.wav"
+    },
+    {
+      "key": "word_workout",
+      "hanji": "運動",
+      "kind": "word",
+      "wav": "raw/word_workout.wav"
+    },
+    {
+      "key": "word_time",
+      "hanji": "時間",
+      "kind": "word",
+      "wav": "raw/word_time.wav"
+    },
+    {
+      "key": "word_distance",
+      "hanji": "路程",
+      "kind": "word",
+      "wav": "raw/word_distance.wav"
+    },
+    {
+      "key": "word_walk",
+      "hanji": "行",
+      "kind": "word",
+      "wav": "raw/word_walk.wav"
+    },
+    {
+      "key": "word_walked",
+      "hanji": "行矣",
+      "kind": "word",
+      "wav": "raw/word_walked.wav"
+    },
+    {
+      "key": "word_run",
+      "hanji": "走",
+      "kind": "word",
+      "wav": "raw/word_run.wav"
+    },
+    {
+      "key": "word_ran",
+      "hanji": "走矣",
+      "kind": "word",
+      "wav": "raw/word_ran.wav"
+    },
+    {
+      "key": "word_ride",
+      "hanji": "騎",
+      "kind": "word",
+      "wav": "raw/word_ride.wav"
+    },
+    {
+      "key": "word_rode",
+      "hanji": "騎矣",
+      "kind": "word",
+      "wav": "raw/word_rode.wav"
+    },
+    {
+      "key": "word_average",
+      "hanji": "平均",
+      "kind": "word",
+      "wav": "raw/word_average.wav"
+    },
+    {
+      "key": "word_pace",
+      "hanji": "一公里時間",
+      "kind": "word",
+      "wav": "raw/word_pace.wav"
+    },
+    {
+      "key": "word_speed",
+      "hanji": "速度",
+      "kind": "word",
+      "wav": "raw/word_speed.wav"
+    },
+    {
+      "key": "word_consumed",
+      "hanji": "消耗",
+      "kind": "word",
+      "wav": "raw/word_consumed.wav"
+    },
+    {
+      "key": "word_goal",
+      "hanji": "目標",
+      "kind": "word",
+      "wav": "raw/word_goal.wav"
+    },
+    {
+      "key": "word_complete",
+      "hanji": "完成",
+      "kind": "word",
+      "wav": "raw/word_complete.wav"
+    },
+    {
+      "key": "phrase_workout_time",
+      "hanji": "運動時間",
+      "kind": "phrase",
+      "wav": "raw/phrase_workout_time.wav"
+    },
+    {
+      "key": "phrase_distance",
+      "hanji": "路程",
+      "kind": "phrase",
+      "wav": "raw/phrase_distance.wav"
+    },
+    {
+      "key": "phrase_average_pace",
+      "hanji": "平均一公里",
+      "kind": "phrase",
+      "wav": "raw/phrase_average_pace.wav"
+    },
+    {
+      "key": "phrase_average_speed",
+      "hanji": "平均速度",
+      "kind": "phrase",
+      "wav": "raw/phrase_average_speed.wav"
+    },
+    {
+      "key": "phrase_one_kilometer",
+      "hanji": "一公里",
+      "kind": "phrase",
+      "wav": "raw/phrase_one_kilometer.wav"
+    },
+    {
+      "key": "phrase_per_hour",
+      "hanji": "每點鐘",
+      "kind": "phrase",
+      "wav": "raw/phrase_per_hour.wav"
+    },
+    {
+      "key": "phrase_calories",
+      "hanji": "消耗",
+      "kind": "phrase",
+      "wav": "raw/phrase_calories.wav"
+    },
+    {
+      "key": "unit_second",
+      "hanji": "秒",
+      "kind": "unit",
+      "wav": "raw/unit_second.wav"
+    },
+    {
+      "key": "unit_minute",
+      "hanji": "分",
+      "kind": "unit",
+      "wav": "raw/unit_minute.wav"
+    },
+    {
+      "key": "unit_minutes",
+      "hanji": "分鐘",
+      "kind": "unit",
+      "wav": "raw/unit_minutes.wav"
+    },
+    {
+      "key": "unit_hour",
+      "hanji": "點鐘",
+      "kind": "unit",
+      "wav": "raw/unit_hour.wav"
+    },
+    {
+      "key": "unit_kilometer",
+      "hanji": "公里",
+      "kind": "unit",
+      "wav": "raw/unit_kilometer.wav"
+    },
+    {
+      "key": "unit_step",
+      "hanji": "步",
+      "kind": "unit",
+      "wav": "raw/unit_step.wav"
+    },
+    {
+      "key": "unit_kcal",
+      "hanji": "大卡",
+      "kind": "unit",
+      "wav": "raw/unit_kcal.wav"
+    },
+    {
+      "key": "decimal_0",
+      "hanji": "點空",
+      "kind": "number",
+      "wav": "raw/decimal_0.wav"
+    },
+    {
+      "key": "decimal_1",
+      "hanji": "點一",
+      "kind": "number",
+      "wav": "raw/decimal_1.wav"
+    },
+    {
+      "key": "decimal_2",
+      "hanji": "點二",
+      "kind": "number",
+      "wav": "raw/decimal_2.wav"
+    },
+    {
+      "key": "decimal_3",
+      "hanji": "點三",
+      "kind": "number",
+      "wav": "raw/decimal_3.wav"
+    },
+    {
+      "key": "decimal_4",
+      "hanji": "點四",
+      "kind": "number",
+      "wav": "raw/decimal_4.wav"
+    },
+    {
+      "key": "decimal_5",
+      "hanji": "點五",
+      "kind": "number",
+      "wav": "raw/decimal_5.wav"
+    },
+    {
+      "key": "decimal_6",
+      "hanji": "點六",
+      "kind": "number",
+      "wav": "raw/decimal_6.wav"
+    },
+    {
+      "key": "decimal_7",
+      "hanji": "點七",
+      "kind": "number",
+      "wav": "raw/decimal_7.wav"
+    },
+    {
+      "key": "decimal_8",
+      "hanji": "點八",
+      "kind": "number",
+      "wav": "raw/decimal_8.wav"
+    },
+    {
+      "key": "decimal_9",
+      "hanji": "點九",
+      "kind": "number",
+      "wav": "raw/decimal_9.wav"
+    },
+    {
+      "key": "num_zero",
+      "hanji": "空",
+      "kind": "number",
+      "wav": "raw/num_zero.wav"
+    },
+    {
+      "key": "num_one_compound",
+      "hanji": "一",
+      "kind": "number",
+      "wav": "raw/num_one_compound.wav"
+    },
+    {
+      "key": "num_one_measure",
+      "hanji": "一",
+      "kind": "number",
+      "wav": "raw/num_one_measure.wav"
+    },
+    {
+      "key": "num_two_compound",
+      "hanji": "二",
+      "kind": "number",
+      "wav": "raw/num_two_compound.wav"
+    },
+    {
+      "key": "num_two_measure",
+      "hanji": "兩",
+      "kind": "number",
+      "wav": "raw/num_two_measure.wav"
+    },
+    {
+      "key": "num_three",
+      "hanji": "三",
+      "kind": "number",
+      "wav": "raw/num_three.wav"
+    },
+    {
+      "key": "num_four",
+      "hanji": "四",
+      "kind": "number",
+      "wav": "raw/num_four.wav"
+    },
+    {
+      "key": "num_five",
+      "hanji": "五",
+      "kind": "number",
+      "wav": "raw/num_five.wav"
+    },
+    {
+      "key": "num_six",
+      "hanji": "六",
+      "kind": "number",
+      "wav": "raw/num_six.wav"
+    },
+    {
+      "key": "num_seven",
+      "hanji": "七",
+      "kind": "number",
+      "wav": "raw/num_seven.wav"
+    },
+    {
+      "key": "num_eight",
+      "hanji": "八",
+      "kind": "number",
+      "wav": "raw/num_eight.wav"
+    },
+    {
+      "key": "num_nine",
+      "hanji": "九",
+      "kind": "number",
+      "wav": "raw/num_nine.wav"
+    },
+    {
+      "key": "num_ten",
+      "hanji": "十",
+      "kind": "number",
+      "wav": "raw/num_ten.wav"
+    },
+    {
+      "key": "num_hundred",
+      "hanji": "百",
+      "kind": "number",
+      "wav": "raw/num_hundred.wav"
+    },
+    {
+      "key": "num_thousand",
+      "hanji": "千",
+      "kind": "number",
+      "wav": "raw/num_thousand.wav"
+    },
+    {
+      "key": "num_ten_thousand",
+      "hanji": "萬",
+      "kind": "number",
+      "wav": "raw/num_ten_thousand.wav"
+    },
+    {
+      "key": "num_hundred_million",
+      "hanji": "億",
+      "kind": "number",
+      "wav": "raw/num_hundred_million.wav"
+    },
+    {
+      "key": "enc_great",
+      "hanji": "真讚喔",
+      "kind": "encourage",
+      "wav": "raw/enc_great.wav"
+    },
+    {
+      "key": "enc_amazing",
+      "hanji": "真𠢕",
+      "kind": "encourage",
+      "wav": "raw/enc_amazing.wav"
+    },
+    {
+      "key": "enc_awesome",
+      "hanji": "有夠讚",
+      "kind": "encourage",
+      "wav": "raw/enc_awesome.wav"
+    },
+    {
+      "key": "enc_good",
+      "hanji": "真讚喔",
+      "kind": "encourage",
+      "wav": "raw/enc_good.wav"
+    },
+    {
+      "key": "enc_not_bad",
+      "hanji": "袂䆀喔",
+      "kind": "encourage",
+      "wav": "raw/enc_not_bad.wav"
+    },
+    {
+      "key": "enc_very_good",
+      "hanji": "真袂䆀",
+      "kind": "encourage",
+      "wav": "raw/enc_very_good.wav"
+    },
+    {
+      "key": "enc_can",
+      "hanji": "會使喔",
+      "kind": "encourage",
+      "wav": "raw/enc_can.wav"
+    },
+    {
+      "key": "enc_you_can",
+      "hanji": "你會使",
+      "kind": "encourage",
+      "wav": "raw/enc_you_can.wav"
+    },
+    {
+      "key": "enc_you_can_do_it",
+      "hanji": "你做會到",
+      "kind": "encourage",
+      "wav": "raw/enc_you_can_do_it.wav"
+    },
+    {
+      "key": "enc_go",
+      "hanji": "加油",
+      "kind": "encourage",
+      "wav": "raw/enc_go.wav"
+    },
+    {
+      "key": "enc_go_again",
+      "hanji": "閣加油",
+      "kind": "encourage",
+      "wav": "raw/enc_go_again.wav"
+    },
+    {
+      "key": "enc_keep_going",
+      "hanji": "繼續加油",
+      "kind": "encourage",
+      "wav": "raw/enc_keep_going.wav"
+    },
+    {
+      "key": "enc_try_more",
+      "hanji": "閣拍拚",
+      "kind": "encourage",
+      "wav": "raw/enc_try_more.wav"
+    },
+    {
+      "key": "enc_try_little_more",
+      "hanji": "閣拍拚一下",
+      "kind": "encourage",
+      "wav": "raw/enc_try_little_more.wav"
+    },
+    {
+      "key": "enc_continue",
+      "hanji": "繼續喔",
+      "kind": "encourage",
+      "wav": "raw/enc_continue.wav"
+    },
+    {
+      "key": "enc_keep_it",
+      "hanji": "繼續保持",
+      "kind": "encourage",
+      "wav": "raw/enc_keep_it.wav"
+    },
+    {
+      "key": "enc_hold",
+      "hanji": "繼續咧",
+      "kind": "encourage",
+      "wav": "raw/enc_hold.wav"
+    },
+    {
+      "key": "enc_hold_little",
+      "hanji": "閣一下",
+      "kind": "encourage",
+      "wav": "raw/enc_hold_little.wav"
+    },
+    {
+      "key": "enc_slow",
+      "hanji": "慢慢仔來",
+      "kind": "encourage",
+      "wav": "raw/enc_slow.wav"
+    },
+    {
+      "key": "enc_steady",
+      "hanji": "穩穩仔來",
+      "kind": "encourage",
+      "wav": "raw/enc_steady.wav"
+    },
+    {
+      "key": "enc_little_more",
+      "hanji": "閣一下",
+      "kind": "encourage",
+      "wav": "raw/enc_little_more.wav"
+    },
+    {
+      "key": "enc_tiny_more",
+      "hanji": "閣淡薄仔",
+      "kind": "encourage",
+      "wav": "raw/enc_tiny_more.wav"
+    },
+    {
+      "key": "enc_almost",
+      "hanji": "欲到矣",
+      "kind": "encourage",
+      "wav": "raw/enc_almost.wav"
+    },
+    {
+      "key": "enc_nearly",
+      "hanji": "就欲到矣",
+      "kind": "encourage",
+      "wav": "raw/enc_nearly.wav"
+    },
+    {
+      "key": "enc_small_gap",
+      "hanji": "差淡薄仔",
+      "kind": "encourage",
+      "wav": "raw/enc_small_gap.wav"
+    },
+    {
+      "key": "enc_very_possible",
+      "hanji": "真會使喔",
+      "kind": "encourage",
+      "wav": "raw/enc_very_possible.wav"
+    },
+    {
+      "key": "enc_progress",
+      "hanji": "有進步喔",
+      "kind": "encourage",
+      "wav": "raw/enc_progress.wav"
+    },
+    {
+      "key": "enc_today_good",
+      "hanji": "今仔日真讚",
+      "kind": "encourage",
+      "wav": "raw/enc_today_good.wav"
+    },
+    {
+      "key": "enc_nice_work",
+      "hanji": "做甲真好",
+      "kind": "encourage",
+      "wav": "raw/enc_nice_work.wav"
+    },
+    {
+      "key": "enc_keep",
+      "hanji": "保持咧",
+      "kind": "encourage",
+      "wav": "raw/enc_keep.wav"
+    },
+    {
+      "key": "enc_hard_work",
+      "hanji": "辛苦矣",
+      "kind": "encourage",
+      "wav": "raw/enc_hard_work.wav"
+    },
+    {
+      "key": "enc_finish",
+      "hanji": "完成矣",
+      "kind": "encourage",
+      "wav": "raw/enc_finish.wav"
+    },
+    {
+      "key": "pause_short",
+      "kind": "pause",
+      "wav": "raw/pause_short.wav"
+    },
+    {
+      "key": "pause_medium",
+      "kind": "pause",
+      "wav": "raw/pause_medium.wav"
+    },
+    {
+      "key": "pause_long",
+      "kind": "pause",
+      "wav": "raw/pause_long.wav"
+    }
+  ]
+}

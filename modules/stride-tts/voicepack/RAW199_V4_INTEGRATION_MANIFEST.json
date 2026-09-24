@@ -1,0 +1,2001 @@
+{
+  "version": "V24",
+  "appVersion": "3.2.5",
+  "versionCode": 20,
+  "source": "步跡_台語真人錄音_RAW199_V4_20260908_031120.zip",
+  "sourceSha256": "94E9FA0B00BCE183C2B3024A7B5AE9062B1FE36128B5B816C34D242EA0AD0388",
+  "processing": "from authoritative raw WebM; 22050 Hz mono PCM16; adaptive 10ms RMS trim; 30ms head guard; 50ms tail guard; RMS target -20 dBFS, peak cap 0.92",
+  "count": 199,
+  "items": [
+    {
+      "key": "integer_full_001",
+      "kind": "integer",
+      "display": "1",
+      "spokenValue": "1",
+      "durationSec": 0.8582,
+      "rmsDbfs": -20.0,
+      "peak": 0.684,
+      "sha256": "E0CD45445A1B39BB63BFF009E178E1DE4DDDC68988D30AE5BD10D0571BDA6E19"
+    },
+    {
+      "key": "integer_full_002",
+      "kind": "integer",
+      "display": "2",
+      "spokenValue": "2",
+      "durationSec": 0.6288,
+      "rmsDbfs": -20.0,
+      "peak": 0.4765,
+      "sha256": "2D5005125F2EAFBA83643AC24CA2F3D9B21713D4D600AFB154910C560377573A"
+    },
+    {
+      "key": "integer_full_003",
+      "kind": "integer",
+      "display": "3",
+      "spokenValue": "3",
+      "durationSec": 0.7585,
+      "rmsDbfs": -20.0,
+      "peak": 0.5923,
+      "sha256": "78E347AF1F5B95945009F4E336B1B184E145BE983454B6A45D190ADB2E81AD23"
+    },
+    {
+      "key": "integer_full_004",
+      "kind": "integer",
+      "display": "4",
+      "spokenValue": "4",
+      "durationSec": 0.6786,
+      "rmsDbfs": -20.0,
+      "peak": 0.4712,
+      "sha256": "ADEE2B56B8D8D9342BD721EE91522D32CABB7C1F1B06FFBF52F52EE705E9B18B"
+    },
+    {
+      "key": "integer_full_005",
+      "kind": "integer",
+      "display": "5",
+      "spokenValue": "5",
+      "durationSec": 0.4891,
+      "rmsDbfs": -20.0,
+      "peak": 0.3944,
+      "sha256": "496E2192DE4DBD676A5586046232E9EE71CB3D020D181988BA8D1EED4848DECD"
+    },
+    {
+      "key": "integer_full_006",
+      "kind": "integer",
+      "display": "6",
+      "spokenValue": "6",
+      "durationSec": 0.2995,
+      "rmsDbfs": -20.0,
+      "peak": 0.5409,
+      "sha256": "9C4FE937A3F6C18E9BC9ADB9CA7E0A21355F56BE0D010EADB06D48A6D06EA284"
+    },
+    {
+      "key": "integer_full_007",
+      "kind": "integer",
+      "display": "7",
+      "spokenValue": "7",
+      "durationSec": 0.4192,
+      "rmsDbfs": -20.0,
+      "peak": 0.4303,
+      "sha256": "D937A4ABC503788BE9589D807D9D2FB52BAEB4B56C5D538C6A9226F120A07D3C"
+    },
+    {
+      "key": "integer_full_008",
+      "kind": "integer",
+      "display": "8",
+      "spokenValue": "8",
+      "durationSec": 0.3693,
+      "rmsDbfs": -20.0,
+      "peak": 0.6025,
+      "sha256": "A9899CD481F23329BD3A1A76D173D4FBBBD16E03F196BD717670D7FE28774B16"
+    },
+    {
+      "key": "integer_full_009",
+      "kind": "integer",
+      "display": "9",
+      "spokenValue": "9",
+      "durationSec": 0.521,
+      "rmsDbfs": -20.0,
+      "peak": 0.5818,
+      "sha256": "57D060D6661E3D22C8CEFB95CA004D54C77BC2E5652DB863E10B0A967CA96244"
+    },
+    {
+      "key": "integer_full_010",
+      "kind": "integer",
+      "display": "10",
+      "spokenValue": "10",
+      "durationSec": 0.2995,
+      "rmsDbfs": -20.0,
+      "peak": 0.5654,
+      "sha256": "4A5148C03204147F2A10279DC42D40CE50DB67280C408558662C671E7AD6B4BE"
+    },
+    {
+      "key": "integer_full_011",
+      "kind": "integer",
+      "display": "11",
+      "spokenValue": "11",
+      "durationSec": 0.499,
+      "rmsDbfs": -20.0,
+      "peak": 0.3481,
+      "sha256": "9616E2473F04FE8B22441B0D3789BE0D50B9216468898751AC20BDD6B5A5D1E6"
+    },
+    {
+      "key": "integer_full_012",
+      "kind": "integer",
+      "display": "12",
+      "spokenValue": "12",
+      "durationSec": 0.6786,
+      "rmsDbfs": -20.0,
+      "peak": 0.4364,
+      "sha256": "32214A043E9C617D5F1707D6D5ED0188E9A9ADFAC27E295850BF10C43A9F2A20"
+    },
+    {
+      "key": "integer_full_013",
+      "kind": "integer",
+      "display": "13",
+      "spokenValue": "13",
+      "durationSec": 0.8183,
+      "rmsDbfs": -20.0,
+      "peak": 0.4973,
+      "sha256": "FA736484C0339B829EA2935B1A9DFE9CAD80DB008B4E601BC6B179AF3E055A01"
+    },
+    {
+      "key": "integer_full_014",
+      "kind": "integer",
+      "display": "14",
+      "spokenValue": "14",
+      "durationSec": 0.7684,
+      "rmsDbfs": -20.0,
+      "peak": 0.662,
+      "sha256": "2C78C038A38695600DE39E3266ADA146D10D16DB1C967801C460DA5670DC15D8"
+    },
+    {
+      "key": "integer_full_015",
+      "kind": "integer",
+      "display": "15",
+      "spokenValue": "15",
+      "durationSec": 0.6687,
+      "rmsDbfs": -20.0,
+      "peak": 0.4792,
+      "sha256": "A981415759B14D96F4FB2FA82B366C68DC39FE446D657475B2E4F50BE73FFC06"
+    },
+    {
+      "key": "integer_full_016",
+      "kind": "integer",
+      "display": "16",
+      "spokenValue": "16",
+      "durationSec": 0.4791,
+      "rmsDbfs": -20.0,
+      "peak": 0.488,
+      "sha256": "0DB1EEE19261F53126E0E5B148926D0D94F49D7CDFC66C113F455068E26C7C33"
+    },
+    {
+      "key": "integer_full_017",
+      "kind": "integer",
+      "display": "17",
+      "spokenValue": "17",
+      "durationSec": 0.8483,
+      "rmsDbfs": -20.0,
+      "peak": 0.5201,
+      "sha256": "DC2CB31898DD02A58124DFED2279374DD0D3F75D3CEB6AE8BBF4E37C0A7336EA"
+    },
+    {
+      "key": "integer_full_018",
+      "kind": "integer",
+      "display": "18",
+      "spokenValue": "18",
+      "durationSec": 0.6487,
+      "rmsDbfs": -20.0,
+      "peak": 0.6971,
+      "sha256": "B20F8F4B0D81680F1C511A644771C2AB7560AC3AF275D8E725734129FEEF4461"
+    },
+    {
+      "key": "integer_full_019",
+      "kind": "integer",
+      "display": "19",
+      "spokenValue": "19",
+      "durationSec": 0.7884,
+      "rmsDbfs": -20.0,
+      "peak": 0.6153,
+      "sha256": "B55EB2B617FD99866CAF418E9B3A51BA311BB8191720C6E2B77FDD8469011B9E"
+    },
+    {
+      "key": "integer_full_020",
+      "kind": "integer",
+      "display": "20",
+      "spokenValue": "20",
+      "durationSec": 0.6687,
+      "rmsDbfs": -20.0,
+      "peak": 0.646,
+      "sha256": "45D7A469B0AA635D47F17B9DD948137A441F028162DA48ACE36F9F28D3388A08"
+    },
+    {
+      "key": "integer_full_021",
+      "kind": "integer",
+      "display": "21",
+      "spokenValue": "21",
+      "durationSec": 0.6886,
+      "rmsDbfs": -20.0,
+      "peak": 0.3872,
+      "sha256": "E08CC03DA6C421AA76E4E227B96A841A3CB811BA0E69D00DF9EF59EB11C12434"
+    },
+    {
+      "key": "integer_full_022",
+      "kind": "integer",
+      "display": "22",
+      "spokenValue": "22",
+      "durationSec": 0.7984,
+      "rmsDbfs": -20.0,
+      "peak": 0.4984,
+      "sha256": "DD2D8CF95B102C86DAE7A2CAC2385F0F16C95D38101D2EBA09F8B6C23F2E3925"
+    },
+    {
+      "key": "integer_full_023",
+      "kind": "integer",
+      "display": "23",
+      "spokenValue": "23",
+      "durationSec": 0.8483,
+      "rmsDbfs": -20.0,
+      "peak": 0.5274,
+      "sha256": "F4A1D8E998FA8CB34F81B3EACEFC61DC288DA292F51E0E32374982618FE45F67"
+    },
+    {
+      "key": "integer_full_024",
+      "kind": "integer",
+      "display": "24",
+      "spokenValue": "24",
+      "durationSec": 0.8981,
+      "rmsDbfs": -20.0,
+      "peak": 0.6971,
+      "sha256": "567EA9EAE29D98ED4467ED9B49EA6466584B4C18750344A7B9EC0384F38A1AFB"
+    },
+    {
+      "key": "integer_full_025",
+      "kind": "integer",
+      "display": "25",
+      "spokenValue": "25",
+      "durationSec": 0.7984,
+      "rmsDbfs": -20.0,
+      "peak": 0.4879,
+      "sha256": "2AF0FB16BB72F475D9A43DDAA8C0ABDA52E3D700703948F17C3DA9AC29C6F798"
+    },
+    {
+      "key": "integer_full_026",
+      "kind": "integer",
+      "display": "26",
+      "spokenValue": "26",
+      "durationSec": 0.6387,
+      "rmsDbfs": -20.0,
+      "peak": 0.5685,
+      "sha256": "CC3945108FA3D6CE438A8C5DFB9D1F2DECB3A591C53D95970AF07C8D07FFDB8B"
+    },
+    {
+      "key": "integer_full_027",
+      "kind": "integer",
+      "display": "27",
+      "spokenValue": "27",
+      "durationSec": 0.8682,
+      "rmsDbfs": -20.0,
+      "peak": 0.5317,
+      "sha256": "424D681E584FB205150FDE1FAD7FC977D812864F6EE17E2DB50E99732ACE4C2C"
+    },
+    {
+      "key": "integer_full_028",
+      "kind": "integer",
+      "display": "28",
+      "spokenValue": "28",
+      "durationSec": 0.7285,
+      "rmsDbfs": -20.0,
+      "peak": 0.7031,
+      "sha256": "E1E12A00EDD89715FA81C8F3E39E815B67D24CB3EE2C053728387A5A17241615"
+    },
+    {
+      "key": "integer_full_029",
+      "kind": "integer",
+      "display": "29",
+      "spokenValue": "29",
+      "durationSec": 0.7485,
+      "rmsDbfs": -20.0,
+      "peak": 0.6149,
+      "sha256": "7FA8BDDA43FF2D6227A8C3F948EC0EFC6668A6AC7F497FA84442119DC962C64D"
+    },
+    {
+      "key": "integer_full_030",
+      "kind": "integer",
+      "display": "30",
+      "spokenValue": "30",
+      "durationSec": 0.7185,
+      "rmsDbfs": -20.0,
+      "peak": 0.5917,
+      "sha256": "C01D916A16D0DDE077B4405C15DE4587A9D56C3CE5D6E392B37C984690135A15"
+    },
+    {
+      "key": "integer_full_031",
+      "kind": "integer",
+      "display": "31",
+      "spokenValue": "31",
+      "durationSec": 0.7086,
+      "rmsDbfs": -20.0,
+      "peak": 0.4283,
+      "sha256": "A71B5A3CB405891677F7C59F82291F58D06513D1DA8C55D3EF99CF35E09BB7DD"
+    },
+    {
+      "key": "integer_full_032",
+      "kind": "integer",
+      "display": "32",
+      "spokenValue": "32",
+      "durationSec": 0.8682,
+      "rmsDbfs": -20.0,
+      "peak": 0.6091,
+      "sha256": "A510942D234748BBA0CA9FEEADE16D81E7FD86D41EE4D7B290E47A84E7E90B3D"
+    },
+    {
+      "key": "integer_full_033",
+      "kind": "integer",
+      "display": "33",
+      "spokenValue": "33",
+      "durationSec": 0.9281,
+      "rmsDbfs": -20.0,
+      "peak": 0.5743,
+      "sha256": "4BE688E4326AC4C90739AEF4D399B6BDDC1F86CDF7191E0DB030CACBC12DD075"
+    },
+    {
+      "key": "integer_full_034",
+      "kind": "integer",
+      "display": "34",
+      "spokenValue": "34",
+      "durationSec": 0.9281,
+      "rmsDbfs": -20.0,
+      "peak": 0.6509,
+      "sha256": "8ACFADC22EE3B3FCF3B0103C8855FCB1C7B11EF9D78C6A5BC7B7896E1730C663"
+    },
+    {
+      "key": "integer_full_035",
+      "kind": "integer",
+      "display": "35",
+      "spokenValue": "35",
+      "durationSec": 0.9408,
+      "rmsDbfs": -20.0,
+      "peak": 0.6365,
+      "sha256": "B334469979348419DEA8FA24A9CF8BE8FAC290E5009701603C87431239AC2184"
+    },
+    {
+      "key": "integer_full_036",
+      "kind": "integer",
+      "display": "36",
+      "spokenValue": "36",
+      "durationSec": 0.8582,
+      "rmsDbfs": -20.0,
+      "peak": 0.7175,
+      "sha256": "EDD4B3F4B13BC9D2BED10D094F464B4B0FFE1128794D044B4D4A9BF99A0E232C"
+    },
+    {
+      "key": "integer_full_037",
+      "kind": "integer",
+      "display": "37",
+      "spokenValue": "37",
+      "durationSec": 0.9809,
+      "rmsDbfs": -20.0,
+      "peak": 0.5069,
+      "sha256": "613B7A5F102142D4FFF84DC48D4B406D8ADDF50755C5AF00A66D52DA163A43CE"
+    },
+    {
+      "key": "integer_full_038",
+      "kind": "integer",
+      "display": "38",
+      "spokenValue": "38",
+      "durationSec": 0.7385,
+      "rmsDbfs": -20.0,
+      "peak": 0.6606,
+      "sha256": "E2B7010664E76748413A2D815A636A08D28451620C91C57B9780BB0DD0FF4D10"
+    },
+    {
+      "key": "integer_full_039",
+      "kind": "integer",
+      "display": "39",
+      "spokenValue": "39",
+      "durationSec": 0.7784,
+      "rmsDbfs": -20.0,
+      "peak": 0.5783,
+      "sha256": "009923D5B224A9081FB45DB142DDC5181857137647C28689FEA41604339C6F94"
+    },
+    {
+      "key": "integer_full_040",
+      "kind": "integer",
+      "display": "40",
+      "spokenValue": "40",
+      "durationSec": 0.6986,
+      "rmsDbfs": -20.0,
+      "peak": 0.6982,
+      "sha256": "4562599FFFAB51D71A06D232CF3462792458AAC3AA7C22457C917AF7010D2E43"
+    },
+    {
+      "key": "integer_full_041",
+      "kind": "integer",
+      "display": "41",
+      "spokenValue": "41",
+      "durationSec": 0.921,
+      "rmsDbfs": -20.0,
+      "peak": 0.4856,
+      "sha256": "8C8A67F441A5141241A677D3A9324BFFB7583E7E1C49A33B2FDD693CCF9DD75D"
+    },
+    {
+      "key": "integer_full_042",
+      "kind": "integer",
+      "display": "42",
+      "spokenValue": "42",
+      "durationSec": 0.8483,
+      "rmsDbfs": -20.0,
+      "peak": 0.5702,
+      "sha256": "A5B8058249CA4CBEC31E518D0F712EEEE1DB09B83052F81E795CBFD0257C2E66"
+    },
+    {
+      "key": "integer_full_043",
+      "kind": "integer",
+      "display": "43",
+      "spokenValue": "43",
+      "durationSec": 0.8782,
+      "rmsDbfs": -20.0,
+      "peak": 0.5776,
+      "sha256": "2757EE1F1CFF9ED3CF4CB699C57CE7B150186916395DEEC2431D0704A407F9B4"
+    },
+    {
+      "key": "integer_full_044",
+      "kind": "integer",
+      "display": "44",
+      "spokenValue": "44",
+      "durationSec": 0.8582,
+      "rmsDbfs": -20.0,
+      "peak": 0.6978,
+      "sha256": "501FA28FD474B7141DA235DE1924396F725BABE1C6C695677DC6234FEEDB37A2"
+    },
+    {
+      "key": "integer_full_045",
+      "kind": "integer",
+      "display": "45",
+      "spokenValue": "45",
+      "durationSec": 0.958,
+      "rmsDbfs": -20.0,
+      "peak": 0.6678,
+      "sha256": "6C0839B079DDEA86E3513CFD9B4EE0AC621C747066E9B983EC82EA88785F2DE5"
+    },
+    {
+      "key": "integer_full_046",
+      "kind": "integer",
+      "display": "46",
+      "spokenValue": "46",
+      "durationSec": 0.8083,
+      "rmsDbfs": -20.0,
+      "peak": 0.6829,
+      "sha256": "D62EA41C3F684AFE2A59467A6EDB066CA814F04F7499B7E9819A35D122F02A00"
+    },
+    {
+      "key": "integer_full_047",
+      "kind": "integer",
+      "display": "47",
+      "spokenValue": "47",
+      "durationSec": 0.7385,
+      "rmsDbfs": -20.0,
+      "peak": 0.5058,
+      "sha256": "47E2197BAAF1E580D2C105A4B6CC19059EE34DC60EE8A1CD791C23777F283A9B"
+    },
+    {
+      "key": "integer_full_048",
+      "kind": "integer",
+      "display": "48",
+      "spokenValue": "48",
+      "durationSec": 0.8083,
+      "rmsDbfs": -20.0,
+      "peak": 0.7357,
+      "sha256": "07C0603B1C84EAB32870B6B4D1841E30901B675DA9D137884C2BAD93DF42469E"
+    },
+    {
+      "key": "integer_full_049",
+      "kind": "integer",
+      "display": "49",
+      "spokenValue": "49",
+      "durationSec": 0.8083,
+      "rmsDbfs": -20.0,
+      "peak": 0.6515,
+      "sha256": "18B7628C70F710250CFD6499C57598ABB9BA70F1DE3F9A336CE6EB2F638FE50B"
+    },
+    {
+      "key": "integer_full_050",
+      "kind": "integer",
+      "display": "50",
+      "spokenValue": "50",
+      "durationSec": 0.6088,
+      "rmsDbfs": -20.0,
+      "peak": 0.6009,
+      "sha256": "09A7FC1637DEADB86F6D50CA9F005DFED34E8C5697917D8E482C3650CEC92276"
+    },
+    {
+      "key": "integer_full_051",
+      "kind": "integer",
+      "display": "51",
+      "spokenValue": "51",
+      "durationSec": 0.6487,
+      "rmsDbfs": -20.0,
+      "peak": 0.3803,
+      "sha256": "F10CA41146E503609017F1F4827E4EE44DB83B70A4551D0409824B8565B50EFD"
+    },
+    {
+      "key": "integer_full_052",
+      "kind": "integer",
+      "display": "52",
+      "spokenValue": "52",
+      "durationSec": 0.7385,
+      "rmsDbfs": -20.0,
+      "peak": 0.3899,
+      "sha256": "66A3E7AC19C99CD506BE70E2F976A83E9D694178D9898AE3680723F408EAD2EC"
+    },
+    {
+      "key": "integer_full_053",
+      "kind": "integer",
+      "display": "53",
+      "spokenValue": "53",
+      "durationSec": 0.7784,
+      "rmsDbfs": -20.0,
+      "peak": 0.5771,
+      "sha256": "616A3FC04F2AC63D41FE6D7E944767A14CDF5E460C6BA10B7085CA0223DF5DF9"
+    },
+    {
+      "key": "integer_full_054",
+      "kind": "integer",
+      "display": "54",
+      "spokenValue": "54",
+      "durationSec": 0.8682,
+      "rmsDbfs": -20.0,
+      "peak": 0.675,
+      "sha256": "4E79B713160CD8C7AE360E7070D4271D656709796C6D66C464B1314D0B347322"
+    },
+    {
+      "key": "integer_full_055",
+      "kind": "integer",
+      "display": "55",
+      "spokenValue": "55",
+      "durationSec": 0.7585,
+      "rmsDbfs": -20.0,
+      "peak": 0.5955,
+      "sha256": "207AEFED3081CD8F81C07863A97236287D9B8B30ACFB6A2200D009A1DFE7C324"
+    },
+    {
+      "key": "integer_full_056",
+      "kind": "integer",
+      "display": "56",
+      "spokenValue": "56",
+      "durationSec": 0.6288,
+      "rmsDbfs": -20.0,
+      "peak": 0.5903,
+      "sha256": "031CA358EDAD4CE8481AF733BCA55CFE945DCED44B02CAE8B008DAC4A6DA5E17"
+    },
+    {
+      "key": "integer_full_057",
+      "kind": "integer",
+      "display": "57",
+      "spokenValue": "57",
+      "durationSec": 0.7086,
+      "rmsDbfs": -20.0,
+      "peak": 0.5008,
+      "sha256": "7CC1D9415E9F51E06FF14531B4275071F287450DCB122072F928C6270D0DED09"
+    },
+    {
+      "key": "integer_full_058",
+      "kind": "integer",
+      "display": "58",
+      "spokenValue": "58",
+      "durationSec": 0.6986,
+      "rmsDbfs": -20.0,
+      "peak": 0.6532,
+      "sha256": "DB1DD6B93CF493733F677E3F8CE670E393E11E1EB1E84BCB6FD63C3978054477"
+    },
+    {
+      "key": "integer_full_059",
+      "kind": "integer",
+      "display": "59",
+      "spokenValue": "59",
+      "durationSec": 0.7185,
+      "rmsDbfs": -20.0,
+      "peak": 0.667,
+      "sha256": "8F5B57114EF6EB2A6853AF45A5C31098ADE21DF87E21CCA34B01F2239AAB7493"
+    },
+    {
+      "key": "integer_full_060",
+      "kind": "integer",
+      "display": "60",
+      "spokenValue": "60",
+      "durationSec": 0.5988,
+      "rmsDbfs": -20.0,
+      "peak": 0.6917,
+      "sha256": "9BEFB8A9FA986420EE53609EBDAB1017E02DA834F9BCB6FF704B2FF7EA0F67D9"
+    },
+    {
+      "key": "integer_full_061",
+      "kind": "integer",
+      "display": "61",
+      "spokenValue": "61",
+      "durationSec": 0.6288,
+      "rmsDbfs": -20.0,
+      "peak": 0.3706,
+      "sha256": "3252AB075953AB845F04E35CA86508DC437BF8355F53097CCB4CADE6A92D0F43"
+    },
+    {
+      "key": "integer_full_062",
+      "kind": "integer",
+      "display": "62",
+      "spokenValue": "62",
+      "durationSec": 0.8483,
+      "rmsDbfs": -20.0,
+      "peak": 0.4719,
+      "sha256": "E021A634ABCB32F0621DCBD6E80B317EBCDFA53B092563C0D0D0029C3F55976C"
+    },
+    {
+      "key": "integer_full_063",
+      "kind": "integer",
+      "display": "63",
+      "spokenValue": "63",
+      "durationSec": 0.8083,
+      "rmsDbfs": -20.0,
+      "peak": 0.6171,
+      "sha256": "638EE223A42B18AD29CFA8F7AD4B41541896DA904D48E70A1672DC3F6C7E3DD2"
+    },
+    {
+      "key": "integer_full_064",
+      "kind": "integer",
+      "display": "64",
+      "spokenValue": "64",
+      "durationSec": 0.7808,
+      "rmsDbfs": -20.0,
+      "peak": 0.5246,
+      "sha256": "6A4946FE4279CBBEDD5D8B28DBE38E49FAA9FCDE7863E37E819AFF7C83A772DC"
+    },
+    {
+      "key": "integer_full_065",
+      "kind": "integer",
+      "display": "65",
+      "spokenValue": "65",
+      "durationSec": 0.8383,
+      "rmsDbfs": -20.0,
+      "peak": 0.5973,
+      "sha256": "C0FDCF9A0D8139F7442AAC1C8B3AB1885684AB0A6E0A6E52DC3CC1B34377769E"
+    },
+    {
+      "key": "integer_full_066",
+      "kind": "integer",
+      "display": "66",
+      "spokenValue": "66",
+      "durationSec": 0.5789,
+      "rmsDbfs": -20.0,
+      "peak": 0.5872,
+      "sha256": "017373D956B68FA999401D709AACE5CC68E1C06C53DE408031CF724F8779E2BF"
+    },
+    {
+      "key": "integer_full_067",
+      "kind": "integer",
+      "display": "67",
+      "spokenValue": "67",
+      "durationSec": 0.6487,
+      "rmsDbfs": -20.0,
+      "peak": 0.4641,
+      "sha256": "EDB4465AE3EF3B47E9B146A4D7DFF94C244060A13A9DE0AC0BD3DAFBB20A0041"
+    },
+    {
+      "key": "integer_full_068",
+      "kind": "integer",
+      "display": "68",
+      "spokenValue": "68",
+      "durationSec": 0.6886,
+      "rmsDbfs": -20.0,
+      "peak": 0.6737,
+      "sha256": "245E7E93B67DCA8A62F32B321959A48E2E771320CB5E67E2B1D3DDE7F7273717"
+    },
+    {
+      "key": "integer_full_069",
+      "kind": "integer",
+      "display": "69",
+      "spokenValue": "69",
+      "durationSec": 0.7585,
+      "rmsDbfs": -20.0,
+      "peak": 0.7513,
+      "sha256": "0A8B9D4F01B3A49CDFC22417655232F975BCB113F2DBBE732039CE64D28C3055"
+    },
+    {
+      "key": "integer_full_070",
+      "kind": "integer",
+      "display": "70",
+      "spokenValue": "70",
+      "durationSec": 0.5888,
+      "rmsDbfs": -20.0,
+      "peak": 0.6349,
+      "sha256": "43F9DD78A364575697882C5A377E32405DEA905018C191894EEF76896E55BE09"
+    },
+    {
+      "key": "integer_full_071",
+      "kind": "integer",
+      "display": "71",
+      "spokenValue": "71",
+      "durationSec": 0.7086,
+      "rmsDbfs": -20.0,
+      "peak": 0.5275,
+      "sha256": "819367F69509F53E071B2D000C9F03DB96808D758E7C8ED1FA4E96EADA8AA6A4"
+    },
+    {
+      "key": "integer_full_072",
+      "kind": "integer",
+      "display": "72",
+      "spokenValue": "72",
+      "durationSec": 0.8582,
+      "rmsDbfs": -20.0,
+      "peak": 0.6942,
+      "sha256": "2EF7FFD4E0C248E2481AB25B73DEB8D527AF8A897971F5A9B78103B8034CC38D"
+    },
+    {
+      "key": "integer_full_073",
+      "kind": "integer",
+      "display": "73",
+      "spokenValue": "73",
+      "durationSec": 0.8582,
+      "rmsDbfs": -20.0,
+      "peak": 0.5598,
+      "sha256": "6C1E1B435AF85E9CECF078684022D49E08F423B9F6319EBC231548F3EE9F5DC6"
+    },
+    {
+      "key": "integer_full_074",
+      "kind": "integer",
+      "display": "74",
+      "spokenValue": "74",
+      "durationSec": 0.8283,
+      "rmsDbfs": -20.0,
+      "peak": 0.6589,
+      "sha256": "B3775F622DD3C570CBA750EAA507FE76CA472DA74953721DF2E5E7DC396F4D2A"
+    },
+    {
+      "key": "integer_full_075",
+      "kind": "integer",
+      "display": "75",
+      "spokenValue": "75",
+      "durationSec": 0.8483,
+      "rmsDbfs": -20.0,
+      "peak": 0.5479,
+      "sha256": "1F2B8FD4855CB0282BCEDC5974C66FE8F89EC50FA119D9099B2A0F8345C347B6"
+    },
+    {
+      "key": "integer_full_076",
+      "kind": "integer",
+      "display": "76",
+      "spokenValue": "76",
+      "durationSec": 0.6886,
+      "rmsDbfs": -20.0,
+      "peak": 0.6121,
+      "sha256": "EA4FC4C0625C35D2B87C680B42A99B6B662B5A5E760D101F7AA711F6A16CF81F"
+    },
+    {
+      "key": "integer_full_077",
+      "kind": "integer",
+      "display": "77",
+      "spokenValue": "77",
+      "durationSec": 0.7086,
+      "rmsDbfs": -20.0,
+      "peak": 0.5898,
+      "sha256": "0CE3FBCA77C54BFD78F0F1C3319925F1678D1FF8055245070B34EC64A0A405E5"
+    },
+    {
+      "key": "integer_full_078",
+      "kind": "integer",
+      "display": "78",
+      "spokenValue": "78",
+      "durationSec": 0.7784,
+      "rmsDbfs": -20.0,
+      "peak": 0.6978,
+      "sha256": "843915C8CFC740EBE00FEF7DAAA07AF5F351E6BDA207FB1D48737F2992FFD8A2"
+    },
+    {
+      "key": "integer_full_079",
+      "kind": "integer",
+      "display": "79",
+      "spokenValue": "79",
+      "durationSec": 0.7485,
+      "rmsDbfs": -20.0,
+      "peak": 0.6712,
+      "sha256": "F3004CA139C9BC41751FD742C5C6D294D8EF769101A42E36BE33BA85FE26805F"
+    },
+    {
+      "key": "integer_full_080",
+      "kind": "integer",
+      "display": "80",
+      "spokenValue": "80",
+      "durationSec": 0.5789,
+      "rmsDbfs": -20.0,
+      "peak": 0.4815,
+      "sha256": "4E8390A6F70C3C6BDD8EAD135DED7BF4815054D550C891E61DEE9A9022998FEA"
+    },
+    {
+      "key": "integer_full_081",
+      "kind": "integer",
+      "display": "81",
+      "spokenValue": "81",
+      "durationSec": 0.6487,
+      "rmsDbfs": -20.0,
+      "peak": 0.5103,
+      "sha256": "38CC3C6C86D59ADF618452188AAED1FF59578D5C652AA954C9AB4874C54453ED"
+    },
+    {
+      "key": "integer_full_082",
+      "kind": "integer",
+      "display": "82",
+      "spokenValue": "82",
+      "durationSec": 0.7385,
+      "rmsDbfs": -20.0,
+      "peak": 0.5259,
+      "sha256": "798F2943CD097FB6B4DF6E90DEA111BCA33421A4F74FDD9B4DA3958C1D9678ED"
+    },
+    {
+      "key": "integer_full_083",
+      "kind": "integer",
+      "display": "83",
+      "spokenValue": "83",
+      "durationSec": 0.8083,
+      "rmsDbfs": -20.0,
+      "peak": 0.5471,
+      "sha256": "58B9DB24B5562E3867FAD5E52EEBA4358C8B760D4FC86E32B0BAFD361CD0431D"
+    },
+    {
+      "key": "integer_full_084",
+      "kind": "integer",
+      "display": "84",
+      "spokenValue": "84",
+      "durationSec": 0.741,
+      "rmsDbfs": -20.0,
+      "peak": 0.6444,
+      "sha256": "FEF33C22ADD356036A5494153D94B2F4684106618C44AB6392E97087118E3552"
+    },
+    {
+      "key": "integer_full_085",
+      "kind": "integer",
+      "display": "85",
+      "spokenValue": "85",
+      "durationSec": 0.7285,
+      "rmsDbfs": -20.0,
+      "peak": 0.5027,
+      "sha256": "DCD26AAFDBD3EF7EA663EC5DF05B8B3C411818E5996CA1EDCABD02749FC4095C"
+    },
+    {
+      "key": "integer_full_086",
+      "kind": "integer",
+      "display": "86",
+      "spokenValue": "86",
+      "durationSec": 0.6288,
+      "rmsDbfs": -20.0,
+      "peak": 0.5504,
+      "sha256": "9435B97816771F9D33C8A1713588013D757F19BA6030FA7DD41C47E2B0290D34"
+    },
+    {
+      "key": "integer_full_087",
+      "kind": "integer",
+      "display": "87",
+      "spokenValue": "87",
+      "durationSec": 0.7313,
+      "rmsDbfs": -20.0,
+      "peak": 0.551,
+      "sha256": "FC2EB5F76F57603C08B4508B4E393748B8D7FC36CDAF033ACC0A0A7B01DBE16D"
+    },
+    {
+      "key": "integer_full_088",
+      "kind": "integer",
+      "display": "88",
+      "spokenValue": "88",
+      "durationSec": 0.6786,
+      "rmsDbfs": -20.0,
+      "peak": 0.6269,
+      "sha256": "33A4F1472A010FF32A9B6DD807797668DF042BF889E3E27561A9DA2FDD813F0B"
+    },
+    {
+      "key": "integer_full_089",
+      "kind": "integer",
+      "display": "89",
+      "spokenValue": "89",
+      "durationSec": 0.6615,
+      "rmsDbfs": -20.0,
+      "peak": 0.4945,
+      "sha256": "2DED437637FD50C6CC8A1B8990A0BDDA6868B54FA80C92ED3289C7915B5B95B6"
+    },
+    {
+      "key": "integer_full_090",
+      "kind": "integer",
+      "display": "90",
+      "spokenValue": "90",
+      "durationSec": 0.6387,
+      "rmsDbfs": -20.0,
+      "peak": 0.5148,
+      "sha256": "475BD42E5B578508CD5810FBB8D7EE93A7BF62C1DE43195A8EF87AA1AEA84C0F"
+    },
+    {
+      "key": "integer_full_091",
+      "kind": "integer",
+      "display": "91",
+      "spokenValue": "91",
+      "durationSec": 0.6487,
+      "rmsDbfs": -20.0,
+      "peak": 0.5601,
+      "sha256": "380D607EE9844C93B1D9C199F0D39FF5237B909087FD7B4D96948F36C5F4054A"
+    },
+    {
+      "key": "integer_full_092",
+      "kind": "integer",
+      "display": "92",
+      "spokenValue": "92",
+      "durationSec": 0.7884,
+      "rmsDbfs": -20.0,
+      "peak": 0.7199,
+      "sha256": "E25A56A3DC2F44D8BD80677351515B805E7032B3FCE115E8897F3176F627AD6F"
+    },
+    {
+      "key": "integer_full_093",
+      "kind": "integer",
+      "display": "93",
+      "spokenValue": "93",
+      "durationSec": 0.8183,
+      "rmsDbfs": -20.0,
+      "peak": 0.546,
+      "sha256": "04FA6019F97FB133270333BC7407D6F764603FF9947D2D65FD26DBE4A5FFDEDB"
+    },
+    {
+      "key": "integer_full_094",
+      "kind": "integer",
+      "display": "94",
+      "spokenValue": "94",
+      "durationSec": 0.7312,
+      "rmsDbfs": -20.0,
+      "peak": 0.7474,
+      "sha256": "78A0AD7849B990F0DB390070E134B3404347487CCCD3666E22C80404C86F3F0B"
+    },
+    {
+      "key": "integer_full_095",
+      "kind": "integer",
+      "display": "95",
+      "spokenValue": "95",
+      "durationSec": 0.7585,
+      "rmsDbfs": -20.0,
+      "peak": 0.5072,
+      "sha256": "041DDF54F22C22ADA705E9932B5522FAC322E9F3FBDF826DD2C0C83F765835B3"
+    },
+    {
+      "key": "integer_full_096",
+      "kind": "integer",
+      "display": "96",
+      "spokenValue": "96",
+      "durationSec": 0.6088,
+      "rmsDbfs": -20.0,
+      "peak": 0.5648,
+      "sha256": "084BC9E689F86BD7DE40F254D627BCE59A9697F4B2D42ED662BC749AB815B792"
+    },
+    {
+      "key": "integer_full_097",
+      "kind": "integer",
+      "display": "97",
+      "spokenValue": "97",
+      "durationSec": 0.7812,
+      "rmsDbfs": -20.0,
+      "peak": 0.5544,
+      "sha256": "ED082521981BE49AFBF296218DAD499B39CEA489AB6780A366573737540CBDE5"
+    },
+    {
+      "key": "integer_full_098",
+      "kind": "integer",
+      "display": "98",
+      "spokenValue": "98",
+      "durationSec": 0.7086,
+      "rmsDbfs": -20.0,
+      "peak": 0.5692,
+      "sha256": "BE2FE20D259749F2B6E24916B1CE9AA5305E451B49CC42C7875B71A903DA5DA5"
+    },
+    {
+      "key": "integer_full_099",
+      "kind": "integer",
+      "display": "99",
+      "spokenValue": "99",
+      "durationSec": 0.6109,
+      "rmsDbfs": -20.0,
+      "peak": 0.5935,
+      "sha256": "55CFC491F12D5B8749A2F8145331E61EEB08323E6A1E4DC85115C977247F42AB"
+    },
+    {
+      "key": "integer_full_100",
+      "kind": "integer",
+      "display": "100",
+      "spokenValue": "100",
+      "durationSec": 0.6088,
+      "rmsDbfs": -20.0,
+      "peak": 0.5739,
+      "sha256": "E2AE459AC74DE0374DEFB4A8790FABAE7B2BC734F61EDC5647E12581C6958501"
+    },
+    {
+      "key": "decimal_full_01",
+      "kind": "decimal",
+      "display": ".01",
+      "spokenValue": ".01",
+      "durationSec": 1.1476,
+      "rmsDbfs": -20.0,
+      "peak": 0.7356,
+      "sha256": "1CA118552D007932C52B76C4F325D57F621F5F4D27FC07C48930A45901080E75"
+    },
+    {
+      "key": "decimal_full_02",
+      "kind": "decimal",
+      "display": ".02",
+      "spokenValue": ".02",
+      "durationSec": 1.0278,
+      "rmsDbfs": -20.0,
+      "peak": 0.7287,
+      "sha256": "574D0F28A1CD6CCFDC066F68C135B289A892A7CE6526078A132EBBEB6EE12FF0"
+    },
+    {
+      "key": "decimal_full_03",
+      "kind": "decimal",
+      "display": ".03",
+      "spokenValue": ".03",
+      "durationSec": 1.0508,
+      "rmsDbfs": -20.0,
+      "peak": 0.5904,
+      "sha256": "046F09B8616BDE581B6C5C0626C72FA5F3CBC2F3EB2C9785B252DDEE1E80FEE0"
+    },
+    {
+      "key": "decimal_full_04",
+      "kind": "decimal",
+      "display": ".04",
+      "spokenValue": ".04",
+      "durationSec": 0.938,
+      "rmsDbfs": -20.0,
+      "peak": 0.7162,
+      "sha256": "3697482C1142A3ECEEB0C9771807CA96DA0B7778A731B722E240B5831B5CE70D"
+    },
+    {
+      "key": "decimal_full_05",
+      "kind": "decimal",
+      "display": ".05",
+      "spokenValue": ".05",
+      "durationSec": 0.8711,
+      "rmsDbfs": -20.0,
+      "peak": 0.554,
+      "sha256": "95DB83101F96447DFFAF8EB472DDC71DA6DE7011E1CF58C0E510CDB48394DF4E"
+    },
+    {
+      "key": "decimal_full_06",
+      "kind": "decimal",
+      "display": ".06",
+      "spokenValue": ".06",
+      "durationSec": 0.948,
+      "rmsDbfs": -20.0,
+      "peak": 0.7485,
+      "sha256": "08AD737FB6D4566FC9678017A0791D3A8481A54824BD6E6477585FA3C941C7CD"
+    },
+    {
+      "key": "decimal_full_07",
+      "kind": "decimal",
+      "display": ".07",
+      "spokenValue": ".07",
+      "durationSec": 0.8183,
+      "rmsDbfs": -20.0,
+      "peak": 0.6955,
+      "sha256": "E3DB7C0B21621088C4006A3C0E6F2689A1F98445AC589DC39EDD1D024FF88E39"
+    },
+    {
+      "key": "decimal_full_08",
+      "kind": "decimal",
+      "display": ".08",
+      "spokenValue": ".08",
+      "durationSec": 0.8882,
+      "rmsDbfs": -20.0,
+      "peak": 0.7148,
+      "sha256": "969BBE744D0CD76FA1E35DD813EEF1AD4B8A9D6E7BA9DD4D61BE65083D3C8C0D"
+    },
+    {
+      "key": "decimal_full_09",
+      "kind": "decimal",
+      "display": ".09",
+      "spokenValue": ".09",
+      "durationSec": 0.8782,
+      "rmsDbfs": -20.0,
+      "peak": 0.5654,
+      "sha256": "814C2E3675D11A83034578C89B896023FB66CBB8E0E9939F3B90528252F6F826"
+    },
+    {
+      "key": "decimal_full_10",
+      "kind": "decimal",
+      "display": ".1",
+      "spokenValue": ".1",
+      "durationSec": 0.529,
+      "rmsDbfs": -20.0,
+      "peak": 0.5994,
+      "sha256": "6250CD3A0152A79963233AE73E1835EDF7BF43E2CCB70393DAD541D5E6B212D9"
+    },
+    {
+      "key": "decimal_full_11",
+      "kind": "decimal",
+      "display": ".11",
+      "spokenValue": ".11",
+      "durationSec": 0.6886,
+      "rmsDbfs": -20.0,
+      "peak": 0.5889,
+      "sha256": "25D4582AE87A8260B26F4795C541263D9280BDE0AC08BA3D4E840C3176E1B892"
+    },
+    {
+      "key": "decimal_full_12",
+      "kind": "decimal",
+      "display": ".12",
+      "spokenValue": ".12",
+      "durationSec": 0.8083,
+      "rmsDbfs": -20.0,
+      "peak": 0.7273,
+      "sha256": "30A061F55FBCFEC02C4F309F4E0DF2861F2E05277DE815215912EC69D853490A"
+    },
+    {
+      "key": "decimal_full_13",
+      "kind": "decimal",
+      "display": ".13",
+      "spokenValue": ".13",
+      "durationSec": 0.8183,
+      "rmsDbfs": -20.0,
+      "peak": 0.6725,
+      "sha256": "6305BC95139958F65D1689B24020AD47E036C75071B7EDAA687718BD275BB7DB"
+    },
+    {
+      "key": "decimal_full_14",
+      "kind": "decimal",
+      "display": ".14",
+      "spokenValue": ".14",
+      "durationSec": 0.7984,
+      "rmsDbfs": -20.0,
+      "peak": 0.587,
+      "sha256": "2BB08766E5BE987CF203B9AE5D948FCD9D8AE64095B20FD20D0BE82F48F44F9F"
+    },
+    {
+      "key": "decimal_full_15",
+      "kind": "decimal",
+      "display": ".15",
+      "spokenValue": ".15",
+      "durationSec": 0.8882,
+      "rmsDbfs": -20.0,
+      "peak": 0.5326,
+      "sha256": "A2DCEFE5E42BC6312A65CA3BA63AC798305CD0CA87F48F5F0C53BD7824393765"
+    },
+    {
+      "key": "decimal_full_16",
+      "kind": "decimal",
+      "display": ".16",
+      "spokenValue": ".16",
+      "durationSec": 0.6188,
+      "rmsDbfs": -20.0,
+      "peak": 0.6513,
+      "sha256": "CA0A4B21663FB0F47E68397A0E24F4B2D6CE50864982CB91B7F9E0FCBE4D1E0A"
+    },
+    {
+      "key": "decimal_full_17",
+      "kind": "decimal",
+      "display": ".17",
+      "spokenValue": ".17",
+      "durationSec": 0.6786,
+      "rmsDbfs": -20.0,
+      "peak": 0.6055,
+      "sha256": "49DE8208570F1E2A2C3E5CBBB54FF0EB72ACF84C549947615949AC957C5563B0"
+    },
+    {
+      "key": "decimal_full_18",
+      "kind": "decimal",
+      "display": ".18",
+      "spokenValue": ".18",
+      "durationSec": 0.7485,
+      "rmsDbfs": -20.0,
+      "peak": 0.6306,
+      "sha256": "35481FE937EBEA033E85116DB1FFA0AF78B1A9C8538277642646AF533D8BAEEF"
+    },
+    {
+      "key": "decimal_full_19",
+      "kind": "decimal",
+      "display": ".19",
+      "spokenValue": ".19",
+      "durationSec": 0.9008,
+      "rmsDbfs": -20.0,
+      "peak": 0.7142,
+      "sha256": "927D6C15927A684ABFC8066641FE19DE075FB87D6F54B6706E21B56B1B8C7BF9"
+    },
+    {
+      "key": "decimal_full_20",
+      "kind": "decimal",
+      "display": ".2",
+      "spokenValue": ".2",
+      "durationSec": 0.7407,
+      "rmsDbfs": -20.0,
+      "peak": 0.6859,
+      "sha256": "0F93527F37A0EA45240ABD044D6E9B601E229428B6344CB2FDDC1BE9057A7178"
+    },
+    {
+      "key": "decimal_full_21",
+      "kind": "decimal",
+      "display": ".21",
+      "spokenValue": ".21",
+      "durationSec": 0.7684,
+      "rmsDbfs": -20.0,
+      "peak": 0.652,
+      "sha256": "AB3BAC109302F2A1D0F1F476645690FDE61C079DCB1E04F30BF9FAD6A896EC30"
+    },
+    {
+      "key": "decimal_full_22",
+      "kind": "decimal",
+      "display": ".22",
+      "spokenValue": ".22",
+      "durationSec": 0.8307,
+      "rmsDbfs": -20.0,
+      "peak": 0.6167,
+      "sha256": "5AB3A885CE38290A81AF0ED1691288C1078EF800D98B2A7E7D649F09AC9E413B"
+    },
+    {
+      "key": "decimal_full_23",
+      "kind": "decimal",
+      "display": ".23",
+      "spokenValue": ".23",
+      "durationSec": 0.9879,
+      "rmsDbfs": -20.0,
+      "peak": 0.6489,
+      "sha256": "92516E4C82D20ECA716F0BBC492F4E081963BF667720F3A388CF8144A742BADC"
+    },
+    {
+      "key": "decimal_full_24",
+      "kind": "decimal",
+      "display": ".24",
+      "spokenValue": ".24",
+      "durationSec": 0.8981,
+      "rmsDbfs": -20.0,
+      "peak": 0.7343,
+      "sha256": "F6790E598762554975374E5772C64B61355B8C78FE5F50669CC953AE09A90968"
+    },
+    {
+      "key": "decimal_full_25",
+      "kind": "decimal",
+      "display": ".25",
+      "spokenValue": ".25",
+      "durationSec": 0.8111,
+      "rmsDbfs": -20.0,
+      "peak": 0.5127,
+      "sha256": "7DEE9632E5A2B49C239B340202D3619CCBF867C45C5F360FA70C4D5FD523D59C"
+    },
+    {
+      "key": "decimal_full_26",
+      "kind": "decimal",
+      "display": ".26",
+      "spokenValue": ".26",
+      "durationSec": 0.6886,
+      "rmsDbfs": -20.0,
+      "peak": 0.7216,
+      "sha256": "CFAA8BAF6C1B16D1DBFF5A69FD0C01A357EFC6034ACC432E0F8C4720DB199DB4"
+    },
+    {
+      "key": "decimal_full_27",
+      "kind": "decimal",
+      "display": ".27",
+      "spokenValue": ".27",
+      "durationSec": 0.7485,
+      "rmsDbfs": -20.0,
+      "peak": 0.6052,
+      "sha256": "CEB0EE1D4BA415ED3C39CF757CC0329A0DF129627ABB678856E6D6F94641AC0C"
+    },
+    {
+      "key": "decimal_full_28",
+      "kind": "decimal",
+      "display": ".28",
+      "spokenValue": ".28",
+      "durationSec": 0.7808,
+      "rmsDbfs": -20.0,
+      "peak": 0.6151,
+      "sha256": "8E69FA862CC25C2C8D60D4869297EE4C3DCA4007446F6A757AFB87B176807EC9"
+    },
+    {
+      "key": "decimal_full_29",
+      "kind": "decimal",
+      "display": ".29",
+      "spokenValue": ".29",
+      "durationSec": 0.7906,
+      "rmsDbfs": -20.0,
+      "peak": 0.6494,
+      "sha256": "0C453CA98A51E89328F150FEE2F6202784EFE9A0A23608CE149241460F796E4F"
+    },
+    {
+      "key": "decimal_full_30",
+      "kind": "decimal",
+      "display": ".3",
+      "spokenValue": ".3",
+      "durationSec": 0.7206,
+      "rmsDbfs": -20.0,
+      "peak": 0.5889,
+      "sha256": "83C88B65F019C6C956C0D919DFC56414894527634BBF532A48C219250C03FD26"
+    },
+    {
+      "key": "decimal_full_31",
+      "kind": "decimal",
+      "display": ".31",
+      "spokenValue": ".31",
+      "durationSec": 0.7884,
+      "rmsDbfs": -20.0,
+      "peak": 0.537,
+      "sha256": "77B56766A21AFBEC45046CE7B6D9927230341042E33EDCD36AC6BE352ED74C2A"
+    },
+    {
+      "key": "decimal_full_32",
+      "kind": "decimal",
+      "display": ".32",
+      "spokenValue": ".32",
+      "durationSec": 0.7808,
+      "rmsDbfs": -20.0,
+      "peak": 0.5897,
+      "sha256": "ECB0181A3923F842DF75114A4F4997871BCD84C47E882BEB6CE4C2E6F25FEB98"
+    },
+    {
+      "key": "decimal_full_33",
+      "kind": "decimal",
+      "display": ".33",
+      "spokenValue": ".33",
+      "durationSec": 0.8309,
+      "rmsDbfs": -20.0,
+      "peak": 0.5981,
+      "sha256": "7444379361855D42E2967AED21882BDFE0E496646F244E8A8DF4D937198BE491"
+    },
+    {
+      "key": "decimal_full_34",
+      "kind": "decimal",
+      "display": ".34",
+      "spokenValue": ".34",
+      "durationSec": 0.8909,
+      "rmsDbfs": -20.0,
+      "peak": 0.6846,
+      "sha256": "F3EFB9BAC6F0E05192D71D3E9BC8D4C05FCCDDF00177A2DFE628BCDDF43DEF5B"
+    },
+    {
+      "key": "decimal_full_35",
+      "kind": "decimal",
+      "display": ".35",
+      "spokenValue": ".35",
+      "durationSec": 0.948,
+      "rmsDbfs": -20.0,
+      "peak": 0.5675,
+      "sha256": "D96F52EF3301C7F86FDAEF3A7742900DE6B3E8861962DE57034BF0F2770604A4"
+    },
+    {
+      "key": "decimal_full_36",
+      "kind": "decimal",
+      "display": ".36",
+      "spokenValue": ".36",
+      "durationSec": 0.938,
+      "rmsDbfs": -20.0,
+      "peak": 0.6987,
+      "sha256": "6C98653EDA4E05351F5B18506744275BA33AEF106E3E14128A7ECB5E4AAD476C"
+    },
+    {
+      "key": "decimal_full_37",
+      "kind": "decimal",
+      "display": ".37",
+      "spokenValue": ".37",
+      "durationSec": 0.811,
+      "rmsDbfs": -20.0,
+      "peak": 0.4708,
+      "sha256": "6541BDA3D0D9F8B1D5B1EFEBCC1954492443C2A0430CC8017F9A05906905443A"
+    },
+    {
+      "key": "decimal_full_38",
+      "kind": "decimal",
+      "display": ".38",
+      "spokenValue": ".38",
+      "durationSec": 0.8981,
+      "rmsDbfs": -20.0,
+      "peak": 0.5533,
+      "sha256": "C38E39455F076B4766D5DC8C1D8E5075F2BBF7852B2E56F048339E6D7528A5C9"
+    },
+    {
+      "key": "decimal_full_39",
+      "kind": "decimal",
+      "display": ".39",
+      "spokenValue": ".39",
+      "durationSec": 0.9081,
+      "rmsDbfs": -20.0,
+      "peak": 0.6555,
+      "sha256": "04CFC7FA03A2D28BA9C4318CE59275776FE852D1ACE61DE670852A71351B1389"
+    },
+    {
+      "key": "decimal_full_40",
+      "kind": "decimal",
+      "display": ".4",
+      "spokenValue": ".4",
+      "durationSec": 0.7086,
+      "rmsDbfs": -20.0,
+      "peak": 0.7936,
+      "sha256": "2230D5E212A19B7E00316B3195D647EA4E3C8F3FFBFEE0682D2BF72B2510ECE3"
+    },
+    {
+      "key": "decimal_full_41",
+      "kind": "decimal",
+      "display": ".41",
+      "spokenValue": ".41",
+      "durationSec": 0.7385,
+      "rmsDbfs": -20.0,
+      "peak": 0.6479,
+      "sha256": "0D6D00140F40E285D48C2346145A8747B939B1E8D470764031E5AD59A7FD8325"
+    },
+    {
+      "key": "decimal_full_42",
+      "kind": "decimal",
+      "display": ".42",
+      "spokenValue": ".42",
+      "durationSec": 0.9307,
+      "rmsDbfs": -20.0,
+      "peak": 0.5916,
+      "sha256": "54811061946571B18365E168CABA87952D3D67822DC1BC39FA58E942333B7E21"
+    },
+    {
+      "key": "decimal_full_43",
+      "kind": "decimal",
+      "display": ".43",
+      "spokenValue": ".43",
+      "durationSec": 0.9979,
+      "rmsDbfs": -20.0,
+      "peak": 0.5583,
+      "sha256": "7FEEF5380897C38A0D28708BA1085494E1F593B2CC709D959901BB7E9AC60FE5"
+    },
+    {
+      "key": "decimal_full_44",
+      "kind": "decimal",
+      "display": ".44",
+      "spokenValue": ".44",
+      "durationSec": 0.8682,
+      "rmsDbfs": -20.0,
+      "peak": 0.7813,
+      "sha256": "29695C21FED05E4612148C30440C4573F5A9539F08CCF1F89681851DC4EA0E9B"
+    },
+    {
+      "key": "decimal_full_45",
+      "kind": "decimal",
+      "display": ".45",
+      "spokenValue": ".45",
+      "durationSec": 0.9181,
+      "rmsDbfs": -20.0,
+      "peak": 0.4966,
+      "sha256": "45EF423A8F4FD1CB0719343700F6B9E73A5A557C97F4772BF4019D4F2A22A3E1"
+    },
+    {
+      "key": "decimal_full_46",
+      "kind": "decimal",
+      "display": ".46",
+      "spokenValue": ".46",
+      "durationSec": 0.7684,
+      "rmsDbfs": -20.0,
+      "peak": 0.6213,
+      "sha256": "D04BBEF04296254D0D41CCAAE5282F163AD7F2DA14CD24ECEB7174555E46EEAC"
+    },
+    {
+      "key": "decimal_full_47",
+      "kind": "decimal",
+      "display": ".47",
+      "spokenValue": ".47",
+      "durationSec": 0.8283,
+      "rmsDbfs": -20.0,
+      "peak": 0.8202,
+      "sha256": "DF6CA789E14322E30436B6A7F3F76815322AE3BA805DF45FA9E727B95D7DDDA1"
+    },
+    {
+      "key": "decimal_full_48",
+      "kind": "decimal",
+      "display": ".48",
+      "spokenValue": ".48",
+      "durationSec": 0.8882,
+      "rmsDbfs": -20.0,
+      "peak": 0.7327,
+      "sha256": "21A90CEC171BC6BA0C9C6C7509CB94E9DDE5B1365AC19379BE43B2522527C0BE"
+    },
+    {
+      "key": "decimal_full_49",
+      "kind": "decimal",
+      "display": ".49",
+      "spokenValue": ".49",
+      "durationSec": 0.9081,
+      "rmsDbfs": -20.0,
+      "peak": 0.7704,
+      "sha256": "AF40786B0055D04CA28989E75BE77ECC55AB6AB04D81FF06AC48379E43847ABA"
+    },
+    {
+      "key": "decimal_full_50",
+      "kind": "decimal",
+      "display": ".5",
+      "spokenValue": ".5",
+      "durationSec": 0.7684,
+      "rmsDbfs": -20.0,
+      "peak": 0.5405,
+      "sha256": "E7FA658B76581328956CB85B1F5CF623F653A0C242A8BE68F2C2C7C25ACFEC56"
+    },
+    {
+      "key": "decimal_full_51",
+      "kind": "decimal",
+      "display": ".51",
+      "spokenValue": ".51",
+      "durationSec": 0.7385,
+      "rmsDbfs": -20.0,
+      "peak": 0.5998,
+      "sha256": "22131F6CD9A5FFC6DD9AFCE73E37FDE9380D6628C388867D2C663D2BA9F5AB59"
+    },
+    {
+      "key": "decimal_full_52",
+      "kind": "decimal",
+      "display": ".52",
+      "spokenValue": ".52",
+      "durationSec": 0.9181,
+      "rmsDbfs": -20.0,
+      "peak": 0.596,
+      "sha256": "97B19A38764236366505F6D2C46F5325F9377CC8B2859F6187A129F3AE046DAA"
+    },
+    {
+      "key": "decimal_full_53",
+      "kind": "decimal",
+      "display": ".53",
+      "spokenValue": ".53",
+      "durationSec": 0.9112,
+      "rmsDbfs": -20.0,
+      "peak": 0.5344,
+      "sha256": "B051AF73A26972D0C8C4887FB5E3ABFB89F8079605E50F7BB3DD1023AFFDB484"
+    },
+    {
+      "key": "decimal_full_54",
+      "kind": "decimal",
+      "display": ".54",
+      "spokenValue": ".54",
+      "durationSec": 0.938,
+      "rmsDbfs": -20.0,
+      "peak": 0.6599,
+      "sha256": "64C753C1E6095E29B5E6D85700245C161AFBCF52AAC9AD846BD7D80872298189"
+    },
+    {
+      "key": "decimal_full_55",
+      "kind": "decimal",
+      "display": ".55",
+      "spokenValue": ".55",
+      "durationSec": 1.2074,
+      "rmsDbfs": -20.0,
+      "peak": 0.64,
+      "sha256": "F0D44789D166B9389DA2D8B178054B1C2136890B79977C0A4C01B61DAD399866"
+    },
+    {
+      "key": "decimal_full_56",
+      "kind": "decimal",
+      "display": ".56",
+      "spokenValue": ".56",
+      "durationSec": 0.7285,
+      "rmsDbfs": -20.0,
+      "peak": 0.5522,
+      "sha256": "C27F8E2AAD1933853FDBF69346C51E5C51E97BFD49BAF9B450D7E2918E20FAF6"
+    },
+    {
+      "key": "decimal_full_57",
+      "kind": "decimal",
+      "display": ".57",
+      "spokenValue": ".57",
+      "durationSec": 0.7884,
+      "rmsDbfs": -20.0,
+      "peak": 0.5584,
+      "sha256": "7682D117EFDB613C1EC2E11F487678926A64B028F08D6DD8B25D2869C26452F1"
+    },
+    {
+      "key": "decimal_full_58",
+      "kind": "decimal",
+      "display": ".58",
+      "spokenValue": ".58",
+      "durationSec": 0.8682,
+      "rmsDbfs": -20.0,
+      "peak": 0.5413,
+      "sha256": "AC5E09C24121C2B38D885B32160455DC67A176EE7668D8C37540A00F236FBCC1"
+    },
+    {
+      "key": "decimal_full_59",
+      "kind": "decimal",
+      "display": ".59",
+      "spokenValue": ".59",
+      "durationSec": 0.8706,
+      "rmsDbfs": -20.0,
+      "peak": 0.5438,
+      "sha256": "C5BE25BFB2DCA042997ED58210948F272E4A6888F8A96DA4A2AD0BBD04B55E46"
+    },
+    {
+      "key": "decimal_full_60",
+      "kind": "decimal",
+      "display": ".6",
+      "spokenValue": ".6",
+      "durationSec": 0.539,
+      "rmsDbfs": -20.0,
+      "peak": 0.5545,
+      "sha256": "8CEEA280003F2F3F041F7BFB905C860B9A8B31C2378CD2D38631BA264BBCEB1A"
+    },
+    {
+      "key": "decimal_full_61",
+      "kind": "decimal",
+      "display": ".61",
+      "spokenValue": ".61",
+      "durationSec": 0.7684,
+      "rmsDbfs": -20.0,
+      "peak": 0.7362,
+      "sha256": "9356F9971E084E7D231AFC24AF295545216783A3BEC01D55AED3097F62ACB7B6"
+    },
+    {
+      "key": "decimal_full_62",
+      "kind": "decimal",
+      "display": ".62",
+      "spokenValue": ".62",
+      "durationSec": 0.8682,
+      "rmsDbfs": -20.0,
+      "peak": 0.7928,
+      "sha256": "5C991C7D3207FAD11B6BBAD5C6110ADB7003AE1A448C2093FEDCDE6507D62042"
+    },
+    {
+      "key": "decimal_full_63",
+      "kind": "decimal",
+      "display": ".63",
+      "spokenValue": ".63",
+      "durationSec": 0.871,
+      "rmsDbfs": -20.0,
+      "peak": 0.7606,
+      "sha256": "4FE4B22C0E669CBAAF60F9835C63BE88F11AE9FB55EC11AB3F08A977067C9A8C"
+    },
+    {
+      "key": "decimal_full_64",
+      "kind": "decimal",
+      "display": ".64",
+      "spokenValue": ".64",
+      "durationSec": 0.9281,
+      "rmsDbfs": -20.0,
+      "peak": 0.8324,
+      "sha256": "53AA1B8B4265C8E1E02489E000578564EFB4064541C307A788F971A6D430F6F5"
+    },
+    {
+      "key": "decimal_full_65",
+      "kind": "decimal",
+      "display": ".65",
+      "spokenValue": ".65",
+      "durationSec": 0.791,
+      "rmsDbfs": -20.0,
+      "peak": 0.5289,
+      "sha256": "FA24E49FE264C50270A39EB46ECC08BDC1F525ADFC502A20B1F40ABA5F9BEFCE"
+    },
+    {
+      "key": "decimal_full_66",
+      "kind": "decimal",
+      "display": ".66",
+      "spokenValue": ".66",
+      "durationSec": 0.6786,
+      "rmsDbfs": -20.0,
+      "peak": 0.6633,
+      "sha256": "99DB0767E63522F9CDC81942EF79D5E0A3B06D9456BBA54A42379E108CFCFA6F"
+    },
+    {
+      "key": "decimal_full_67",
+      "kind": "decimal",
+      "display": ".67",
+      "spokenValue": ".67",
+      "durationSec": 0.7485,
+      "rmsDbfs": -20.0,
+      "peak": 0.6832,
+      "sha256": "04161902BD4FB651B5A614E049C0C050003253F6A1CC1488B70405BEAEB4461D"
+    },
+    {
+      "key": "decimal_full_68",
+      "kind": "decimal",
+      "display": ".68",
+      "spokenValue": ".68",
+      "durationSec": 0.8183,
+      "rmsDbfs": -20.0,
+      "peak": 0.6087,
+      "sha256": "AA627312DD01E798E0B6C7963FB94E64E77BBFC92F5518C16681811D531DCC8F"
+    },
+    {
+      "key": "decimal_full_69",
+      "kind": "decimal",
+      "display": ".69",
+      "spokenValue": ".69",
+      "durationSec": 0.8582,
+      "rmsDbfs": -20.0,
+      "peak": 0.6618,
+      "sha256": "78F67C04D9D584D15809177E8C19B3443253ED3B1385F39EF79158D2B8704424"
+    },
+    {
+      "key": "decimal_full_70",
+      "kind": "decimal",
+      "display": ".7",
+      "spokenValue": ".7",
+      "durationSec": 0.5988,
+      "rmsDbfs": -20.0,
+      "peak": 0.6541,
+      "sha256": "979A1F02779C3DD6735BED3790A11D62CF9C1EA347803BB51046AE3A8FC34AB3"
+    },
+    {
+      "key": "decimal_full_71",
+      "kind": "decimal",
+      "display": ".71",
+      "spokenValue": ".71",
+      "durationSec": 0.7485,
+      "rmsDbfs": -20.0,
+      "peak": 0.6879,
+      "sha256": "6841A9983410FD8F0EC30AFFB27923690DD8047C7BACD3970B0D3A147F0C3443"
+    },
+    {
+      "key": "decimal_full_72",
+      "kind": "decimal",
+      "display": ".72",
+      "spokenValue": ".72",
+      "durationSec": 0.8483,
+      "rmsDbfs": -20.0,
+      "peak": 0.7846,
+      "sha256": "E6B0C611B879A7D5BF01855AF4A0678FC2AA2630A298D619773A779A1E889DC3"
+    },
+    {
+      "key": "decimal_full_73",
+      "kind": "decimal",
+      "display": ".73",
+      "spokenValue": ".73",
+      "durationSec": 0.9081,
+      "rmsDbfs": -20.0,
+      "peak": 0.519,
+      "sha256": "D38A079A9B326A353F7248E837FDCC178131C15A0721705AF4F9E17996292522"
+    },
+    {
+      "key": "decimal_full_74",
+      "kind": "decimal",
+      "display": ".74",
+      "spokenValue": ".74",
+      "durationSec": 0.8483,
+      "rmsDbfs": -20.0,
+      "peak": 0.6436,
+      "sha256": "97821BCB9B61E0218969BB200CC985EC9C0F96F8E8EFE412289B0555B6724EB5"
+    },
+    {
+      "key": "decimal_full_75",
+      "kind": "decimal",
+      "display": ".75",
+      "spokenValue": ".75",
+      "durationSec": 0.8682,
+      "rmsDbfs": -20.0,
+      "peak": 0.5652,
+      "sha256": "0B9F1AD856B328B86B8D6E4FC947A7D1010CA0A27A34C1DF268BC3BC5A3A96F2"
+    },
+    {
+      "key": "decimal_full_76",
+      "kind": "decimal",
+      "display": ".76",
+      "spokenValue": ".76",
+      "durationSec": 0.6986,
+      "rmsDbfs": -20.0,
+      "peak": 0.7059,
+      "sha256": "7DC3FF8E4F2DA2A9287DA197EA28D4F6C81FEE7D2066C57C58628F1F40E78D51"
+    },
+    {
+      "key": "decimal_full_77",
+      "kind": "decimal",
+      "display": ".77",
+      "spokenValue": ".77",
+      "durationSec": 0.9109,
+      "rmsDbfs": -20.0,
+      "peak": 0.5983,
+      "sha256": "D8B85E3607961A5050AF44525659C38CE47D61C5CDB950FB3F01CD0B33CF3FCA"
+    },
+    {
+      "key": "decimal_full_78",
+      "kind": "decimal",
+      "display": ".78",
+      "spokenValue": ".78",
+      "durationSec": 0.7984,
+      "rmsDbfs": -20.0,
+      "peak": 0.5944,
+      "sha256": "806F09A7E76D3B898F9C3D797EC03137D393465149422B04E4C78AD57FAF26A2"
+    },
+    {
+      "key": "decimal_full_79",
+      "kind": "decimal",
+      "display": ".79",
+      "spokenValue": ".79",
+      "durationSec": 0.8107,
+      "rmsDbfs": -20.0,
+      "peak": 0.5741,
+      "sha256": "3457C89157D57872173FA538352F6EEA98981ECD062CF4ACB1424554C899090C"
+    },
+    {
+      "key": "decimal_full_80",
+      "kind": "decimal",
+      "display": ".8",
+      "spokenValue": ".8",
+      "durationSec": 0.621,
+      "rmsDbfs": -20.0,
+      "peak": 0.6161,
+      "sha256": "B3FBB91AE1DFCF1FADF6B065F0DA590D4E8E5C808A354E19204775F39F34D7E1"
+    },
+    {
+      "key": "decimal_full_81",
+      "kind": "decimal",
+      "display": ".81",
+      "spokenValue": ".81",
+      "durationSec": 0.7784,
+      "rmsDbfs": -20.0,
+      "peak": 0.5288,
+      "sha256": "8CB3BEABD712F06B450B608B5459EAFC4B1E85FD9D42CA296BF2B9E43CEEFD38"
+    },
+    {
+      "key": "decimal_full_82",
+      "kind": "decimal",
+      "display": ".82",
+      "spokenValue": ".82",
+      "durationSec": 0.941,
+      "rmsDbfs": -20.0,
+      "peak": 0.6848,
+      "sha256": "9A6984DD38FBABBA8F1CB8E9CA003F2FCDFF1A079FEB01625C04B0C6EFC661A5"
+    },
+    {
+      "key": "decimal_full_83",
+      "kind": "decimal",
+      "display": ".83",
+      "spokenValue": ".83",
+      "durationSec": 0.9979,
+      "rmsDbfs": -20.0,
+      "peak": 0.511,
+      "sha256": "97675278E07295A4CE9EE4206A47DE6741812CB390411A0AAB5E2EBB95EC18C2"
+    },
+    {
+      "key": "decimal_full_84",
+      "kind": "decimal",
+      "display": ".84",
+      "spokenValue": ".84",
+      "durationSec": 0.9608,
+      "rmsDbfs": -20.0,
+      "peak": 0.6946,
+      "sha256": "7803E7F555D7B6D6FEC323A412E1DAFB5905E2A8274AB25E2E5E269C5860C8F5"
+    },
+    {
+      "key": "decimal_full_85",
+      "kind": "decimal",
+      "display": ".85",
+      "spokenValue": ".85",
+      "durationSec": 0.9608,
+      "rmsDbfs": -20.0,
+      "peak": 0.5155,
+      "sha256": "73BF799C3A38FD7C158A83A02A0B99AF165A2C962A69470D2583E59CE283A3A0"
+    },
+    {
+      "key": "decimal_full_86",
+      "kind": "decimal",
+      "display": ".86",
+      "spokenValue": ".86",
+      "durationSec": 0.7684,
+      "rmsDbfs": -20.0,
+      "peak": 0.5806,
+      "sha256": "8182DB1C38E15A98EFA6A7BADAF07F981A210D487FF33FEF20A2012D7A3405F6"
+    },
+    {
+      "key": "decimal_full_87",
+      "kind": "decimal",
+      "display": ".87",
+      "spokenValue": ".87",
+      "durationSec": 0.8383,
+      "rmsDbfs": -20.0,
+      "peak": 0.5889,
+      "sha256": "64CAC42F4BB7B0E9DCE5412421FC60C30FA8F81CFE37BD57C4C9DB2C059AFD95"
+    },
+    {
+      "key": "decimal_full_88",
+      "kind": "decimal",
+      "display": ".88",
+      "spokenValue": ".88",
+      "durationSec": 0.8582,
+      "rmsDbfs": -20.0,
+      "peak": 0.5583,
+      "sha256": "FECB33B727E956043EDAA804252A1CD2991F849F2BED384248A7F8E6F85EDBCC"
+    },
+    {
+      "key": "decimal_full_89",
+      "kind": "decimal",
+      "display": ".89",
+      "spokenValue": ".89",
+      "durationSec": 0.8908,
+      "rmsDbfs": -20.0,
+      "peak": 0.5846,
+      "sha256": "B567F4772D2899457E6A31A6CC5EA7599418C616150E6BCB1B824EFE4D2551B9"
+    },
+    {
+      "key": "decimal_full_90",
+      "kind": "decimal",
+      "display": ".9",
+      "spokenValue": ".9",
+      "durationSec": 0.641,
+      "rmsDbfs": -20.0,
+      "peak": 0.6708,
+      "sha256": "E47B8B52BA3048FF0F8B01A883EF0DB246312EE4465A9E5DC1A8E77FBE8CEECD"
+    },
+    {
+      "key": "decimal_full_91",
+      "kind": "decimal",
+      "display": ".91",
+      "spokenValue": ".91",
+      "durationSec": 0.7784,
+      "rmsDbfs": -20.0,
+      "peak": 0.535,
+      "sha256": "C2B67B6CA0E05ECB684782926929C2C8A263E4A30076D410D530A16DABC548D9"
+    },
+    {
+      "key": "decimal_full_92",
+      "kind": "decimal",
+      "display": ".92",
+      "spokenValue": ".92",
+      "durationSec": 0.8909,
+      "rmsDbfs": -20.0,
+      "peak": 0.5948,
+      "sha256": "53D9D4B465B33372D41A25FC230D6DE6E9D87AC8417F28D9AB4159858A5F7211"
+    },
+    {
+      "key": "decimal_full_93",
+      "kind": "decimal",
+      "display": ".93",
+      "spokenValue": ".93",
+      "durationSec": 0.958,
+      "rmsDbfs": -20.0,
+      "peak": 0.5512,
+      "sha256": "1DBD591BBC566BBE665F733ADB2A1FA85C2351FAF9EDE2330A9311A156FFC9FF"
+    },
+    {
+      "key": "decimal_full_94",
+      "kind": "decimal",
+      "display": ".94",
+      "spokenValue": ".94",
+      "durationSec": 0.938,
+      "rmsDbfs": -20.0,
+      "peak": 0.6227,
+      "sha256": "3A82EA1236641CE4A27BB741DC432652479EB6DA378D74AAE275578CED9EE008"
+    },
+    {
+      "key": "decimal_full_95",
+      "kind": "decimal",
+      "display": ".95",
+      "spokenValue": ".95",
+      "durationSec": 0.8509,
+      "rmsDbfs": -20.0,
+      "peak": 0.4453,
+      "sha256": "6F665EDBEBA3E4E990ACCB00C043CAABFDBF0307E1BF0C0E0E9E924081F72626"
+    },
+    {
+      "key": "decimal_full_96",
+      "kind": "decimal",
+      "display": ".96",
+      "spokenValue": ".96",
+      "durationSec": 0.7984,
+      "rmsDbfs": -20.0,
+      "peak": 0.5713,
+      "sha256": "0EB659FA025E3D501E05413CA47801FA697DC5D6219DDA76FEC4F0AF2AFBE789"
+    },
+    {
+      "key": "decimal_full_97",
+      "kind": "decimal",
+      "display": ".97",
+      "spokenValue": ".97",
+      "durationSec": 0.8582,
+      "rmsDbfs": -20.0,
+      "peak": 0.6076,
+      "sha256": "BC2DBCA402A668EAF18502DBDF7835813E3455B3E84316D674AF0CB79F659176"
+    },
+    {
+      "key": "decimal_full_98",
+      "kind": "decimal",
+      "display": ".98",
+      "spokenValue": ".98",
+      "durationSec": 0.8782,
+      "rmsDbfs": -20.0,
+      "peak": 0.597,
+      "sha256": "0527582770F862D6A1094A199F4CB8FA161E2FF55620EA45BE09323B3267FCF1"
+    },
+    {
+      "key": "decimal_full_99",
+      "kind": "decimal",
+      "display": ".99",
+      "spokenValue": ".99",
+      "durationSec": 0.9109,
+      "rmsDbfs": -20.0,
+      "peak": 0.5626,
+      "sha256": "3CC0F20569A6F76C3172092FC82609BDF31AB5C010F31C6984805DE244CD65E8"
+    }
+  ]
+}
