@@ -1,0 +1,48 @@
+{
+  "versionName": "3.2.3",
+  "versionCode": 18,
+  "package": "com.app.strideroute",
+  "result": "PASS_STATIC",
+  "checks": {
+    "wav_count_102": true,
+    "wav_format_all_pcm16_mono_22050": true,
+    "human_token_count_99": true,
+    "pause_count_3": true,
+    "pause_short_35ms": true,
+    "pause_medium_70ms": true,
+    "pause_long_110ms": true,
+    "decimal_0_to_9_complete": true,
+    "decimal_point_absent": true,
+    "shopping_start_present": true,
+    "stroll_start_absent": true,
+    "workout_type_has_shopping": true,
+    "db_check_has_shopping": true,
+    "db_migration_rebuild_present": true,
+    "shopping_profile_independent": true,
+    "runtime_speed_1x": true,
+    "runtime_no_1_15x": true,
+    "runtime_no_blanket_crossfade": true,
+    "version_name_3_2_3": true,
+    "version_code_18": true,
+    "package_locked": true,
+    "build_no_prefer_offline": true,
+    "build_pnpm_9_12_0": true
+  },
+  "typescriptSyntaxParse": "PASS (46 .ts/.tsx, 0 parse diagnostics)",
+  "kotlinSyntaxParse": "PASS basic parser check (no syntax-token errors; full Android dependency compile pending build)",
+  "sqliteMigrationSimulation": "PASS (old rows + child foreign keys preserved; shopping insert accepted; foreign_key_check empty)",
+  "androidReleaseBuild": "NOT_RUN_IN_THIS_ENVIRONMENT",
+  "audioQc": {
+    "speechToEdgeSnrDbMin": 23.4,
+    "speechToEdgeSnrDbMedian": 30.0,
+    "hum60or120HzProminenceDbMax": 12.1,
+    "hum60or120HzProminenceDbMedian": 6.1,
+    "strongHumThresholdDb": 15.0,
+    "strongHumCandidates": 0,
+    "note": "Signal-level screening only. Decoded Opus peak overshoot is not classified as source clipping without auditory/original-ADC evidence."
+  },
+  "notes": [
+    "No claim of human-ear/noise-free auditory approval is made.",
+    "Full Expo/Android dependency-aware compilation and APK/AAB signing validation must run in the Windows build environment."
+  ]
+}

@@ -1,0 +1,837 @@
+{
+  "name": "StrideRoute Taigi Real Voice V22",
+  "source_recording": "步跡_台語真人錄音_RAW99_V2_20260905_143804.zip",
+  "human_tokens": 99,
+  "pause_tokens": 3,
+  "total_wav": 102,
+  "format": "22050 Hz / mono / PCM16 WAV",
+  "recording_policy": {
+    "head_padding_ms": 0,
+    "tail_natural_release_ms": 30,
+    "speed": 1.0,
+    "runtime_crossfade_ms": 0,
+    "anti_click_fade_in_ms": 2,
+    "anti_click_fade_out_ms": 3,
+    "noise_reduction": false,
+    "rule": "front edge begins at detected real speech onset; only a short natural tail is retained"
+  },
+  "runtime_pause_ms": {
+    "short": 35,
+    "medium": 70,
+    "long": 110
+  },
+  "new_workout_mode": "shopping",
+  "shopping_semantics": "elapsed time continues through normal stops; no automatic pause; walking distance uses a dedicated stronger stationary-drift filter",
+  "decimal_policy": "0.0X uses num_zero + decimal_0 + following digit; decimal_point is forbidden",
+  "calorie_voice": "word_consumed + number + unit_kcal; unit_kcal is recorded as 大卡",
+  "audio_summary": {
+    "totalRawSeconds": 144.24,
+    "totalTrimmedSeconds": 79.041,
+    "meanHeadRemovedMs": 426.5,
+    "meanTailRemovedMs": 232.1,
+    "objectiveNoise": {
+      "speechToEdgeSnrDbMin": 23.4,
+      "speechToEdgeSnrDbMedian": 30.0,
+      "hum60or120HzProminenceDbMax": 12.1,
+      "hum60or120HzProminenceDbMedian": 6.1,
+      "strongHumThresholdDb": 15.0,
+      "strongHumCandidates": 0,
+      "note": "Signal-level screening only. Decoded Opus peak overshoot is not classified as source clipping without auditory/original-ADC evidence."
+    },
+    "auditoryQc": "not_performed_by_model"
+  },
+  "tokens": [
+    {
+      "order": 1,
+      "key": "state_walk_start",
+      "labelZh": "開始健行（散步也用這個）",
+      "hanji": "開始健行",
+      "kind": "state",
+      "context": "按下健行模式開始時播放；散步也使用健行模式。請把「開始健行」當成完整一句自然錄完。"
+    },
+    {
+      "order": 2,
+      "key": "state_shopping_start",
+      "labelZh": "開始逛街（含夜市／菜市場／市集）",
+      "hanji": "開始逛街",
+      "kind": "state",
+      "context": "獨立「逛街」模式開始；逛街、逛菜市場、逛夜市、逛市集都用這一組。請把「開始逛街」當成完整一句自然錄完。"
+    },
+    {
+      "order": 3,
+      "key": "state_run_start",
+      "labelZh": "開始跑步",
+      "hanji": "開始跑步",
+      "kind": "state",
+      "context": "按下跑步模式開始時播放。請把「開始跑步」當成完整一句自然錄完。"
+    },
+    {
+      "order": 4,
+      "key": "state_bike_start",
+      "labelZh": "開始騎車",
+      "hanji": "開始騎車",
+      "kind": "state",
+      "context": "按下腳踏車模式開始時播放。請把「開始騎車」當成完整一句自然錄完。"
+    },
+    {
+      "order": 5,
+      "key": "state_pause",
+      "labelZh": "運動暫停",
+      "hanji": "運動暫停",
+      "kind": "state",
+      "context": "使用者手動按暫停時播放；不再重複目前是哪一種運動。逛街停在攤位／店內不算手動暫停。"
+    },
+    {
+      "order": 6,
+      "key": "state_resume",
+      "labelZh": "繼續運動",
+      "hanji": "繼續運動",
+      "kind": "state",
+      "context": "使用者手動恢復活動時播放；不再重複目前是哪一種運動。"
+    },
+    {
+      "order": 7,
+      "key": "state_end",
+      "labelZh": "運動結束",
+      "hanji": "運動結束",
+      "kind": "state",
+      "context": "活動正式結束時播放；不再重複目前是哪一種運動。"
+    },
+    {
+      "order": 8,
+      "key": "word_already",
+      "labelZh": "已經",
+      "hanji": "已經",
+      "kind": "word",
+      "context": "使用情境：已經＋行／走＋距離。"
+    },
+    {
+      "order": 9,
+      "key": "word_today",
+      "labelZh": "今天",
+      "hanji": "今仔日",
+      "kind": "word",
+      "context": "使用情境：運動結束摘要中的前導詞。"
+    },
+    {
+      "order": 10,
+      "key": "word_total",
+      "labelZh": "一共",
+      "hanji": "總共",
+      "kind": "word",
+      "context": "使用情境：運動結束摘要中的前導詞。"
+    },
+    {
+      "order": 11,
+      "key": "word_altogether",
+      "labelZh": "總共",
+      "hanji": "總共",
+      "kind": "word",
+      "context": "使用情境：運動結束摘要中的前導詞。"
+    },
+    {
+      "order": 12,
+      "key": "word_workout",
+      "labelZh": "運動",
+      "hanji": "運動",
+      "kind": "word",
+      "context": "組合播報素材；請用正常說話速度，前後不要自行加停頓詞。"
+    },
+    {
+      "order": 13,
+      "key": "word_time",
+      "labelZh": "時間",
+      "hanji": "時間",
+      "kind": "word",
+      "context": "組合播報素材；請用正常說話速度，前後不要自行加停頓詞。"
+    },
+    {
+      "order": 14,
+      "key": "word_distance",
+      "labelZh": "距離（語音改說「路程」）",
+      "hanji": "路程",
+      "kind": "word",
+      "context": "介面仍可顯示「距離」；真人台語播報改用較自然的「路程」。"
+    },
+    {
+      "order": 15,
+      "key": "word_walk",
+      "labelZh": "走",
+      "hanji": "行",
+      "kind": "word",
+      "context": "使用情境：已經＋動作＋距離；尾音不要收成完整句號。"
+    },
+    {
+      "order": 16,
+      "key": "word_walked",
+      "labelZh": "走了",
+      "hanji": "行矣",
+      "kind": "word",
+      "context": "使用情境：今仔日總共＋動作完成＋距離。"
+    },
+    {
+      "order": 17,
+      "key": "word_run",
+      "labelZh": "跑",
+      "hanji": "走",
+      "kind": "word",
+      "context": "使用情境：已經＋動作＋距離；尾音不要收成完整句號。"
+    },
+    {
+      "order": 18,
+      "key": "word_ran",
+      "labelZh": "跑了",
+      "hanji": "走矣",
+      "kind": "word",
+      "context": "使用情境：今仔日總共＋動作完成＋距離。"
+    },
+    {
+      "order": 19,
+      "key": "word_ride",
+      "labelZh": "騎",
+      "hanji": "騎",
+      "kind": "word",
+      "context": "使用情境：已經＋動作＋距離；尾音不要收成完整句號。"
+    },
+    {
+      "order": 20,
+      "key": "word_rode",
+      "labelZh": "騎了",
+      "hanji": "騎矣",
+      "kind": "word",
+      "context": "使用情境：今仔日總共＋動作完成＋距離。"
+    },
+    {
+      "order": 21,
+      "key": "word_average",
+      "labelZh": "平均",
+      "hanji": "平均",
+      "kind": "word",
+      "context": "組合播報素材；請用正常說話速度，前後不要自行加停頓詞。"
+    },
+    {
+      "order": 22,
+      "key": "word_pace",
+      "labelZh": "配速（語音不用硬念「配速」）",
+      "hanji": "一公里時間",
+      "kind": "word",
+      "context": "供配速語意使用；用「一公里時間」取代硬念書面「配速」。"
+    },
+    {
+      "order": 23,
+      "key": "word_speed",
+      "labelZh": "速度",
+      "hanji": "速度",
+      "kind": "word",
+      "context": "組合播報素材；請用正常說話速度，前後不要自行加停頓詞。"
+    },
+    {
+      "order": 24,
+      "key": "word_consumed",
+      "labelZh": "消耗",
+      "hanji": "消耗",
+      "kind": "word",
+      "context": "組合播報素材；請用正常說話速度，前後不要自行加停頓詞。"
+    },
+    {
+      "order": 25,
+      "key": "word_goal",
+      "labelZh": "目標",
+      "hanji": "目標",
+      "kind": "word",
+      "context": "組合播報素材；請用正常說話速度，前後不要自行加停頓詞。"
+    },
+    {
+      "order": 26,
+      "key": "word_complete",
+      "labelZh": "完成",
+      "hanji": "完成",
+      "kind": "word",
+      "context": "組合播報素材；請用正常說話速度，前後不要自行加停頓詞。"
+    },
+    {
+      "order": 27,
+      "key": "phrase_workout_time",
+      "labelZh": "運動時間",
+      "hanji": "運動時間",
+      "kind": "phrase",
+      "context": "固定片語，請整段連續自然念完；後面通常還會接數字或單位。"
+    },
+    {
+      "order": 28,
+      "key": "phrase_distance",
+      "labelZh": "距離／路程",
+      "hanji": "路程",
+      "kind": "phrase",
+      "context": "完整播報欄位名稱；後面接數字＋公里。"
+    },
+    {
+      "order": 29,
+      "key": "phrase_average_pace",
+      "labelZh": "平均配速",
+      "hanji": "平均一公里",
+      "kind": "phrase",
+      "context": "後面直接接時間，例如「平均一公里＋五分鐘……」。"
+    },
+    {
+      "order": 30,
+      "key": "phrase_average_speed",
+      "labelZh": "平均速度",
+      "hanji": "平均速度",
+      "kind": "phrase",
+      "context": "固定片語，請整段連續自然念完；後面通常還會接數字或單位。"
+    },
+    {
+      "order": 31,
+      "key": "phrase_one_kilometer",
+      "labelZh": "一公里",
+      "hanji": "一公里",
+      "kind": "phrase",
+      "context": "固定片語，請整段連續自然念完；後面通常還會接數字或單位。"
+    },
+    {
+      "order": 32,
+      "key": "phrase_per_hour",
+      "labelZh": "每小時",
+      "hanji": "每點鐘",
+      "kind": "phrase",
+      "context": "固定片語，請整段連續自然念完；後面通常還會接數字或單位。"
+    },
+    {
+      "order": 33,
+      "key": "phrase_calories",
+      "labelZh": "消耗熱量（語音句型改為「消耗＋數字＋大卡」）",
+      "hanji": "消耗",
+      "kind": "phrase",
+      "context": "不要念「熱量」。正式組句：消耗＋數字＋大卡。"
+    },
+    {
+      "order": 34,
+      "key": "unit_second",
+      "labelZh": "秒",
+      "hanji": "秒",
+      "kind": "unit",
+      "context": "單位，前面會接數字；不要刻意拖長或加句尾語氣。"
+    },
+    {
+      "order": 35,
+      "key": "unit_minute",
+      "labelZh": "分",
+      "hanji": "分",
+      "kind": "unit",
+      "context": "單位，前面會接數字；不要刻意拖長或加句尾語氣。"
+    },
+    {
+      "order": 36,
+      "key": "unit_minutes",
+      "labelZh": "分鐘",
+      "hanji": "分鐘",
+      "kind": "unit",
+      "context": "單位，前面會接數字；不要刻意拖長或加句尾語氣。"
+    },
+    {
+      "order": 37,
+      "key": "unit_hour",
+      "labelZh": "小時",
+      "hanji": "點鐘",
+      "kind": "unit",
+      "context": "單位，前面會接數字；不要刻意拖長或加句尾語氣。"
+    },
+    {
+      "order": 38,
+      "key": "unit_kilometer",
+      "labelZh": "公里",
+      "hanji": "公里",
+      "kind": "unit",
+      "context": "單位，前面會接數字；不要刻意拖長或加句尾語氣。"
+    },
+    {
+      "order": 39,
+      "key": "unit_step",
+      "labelZh": "步",
+      "hanji": "步",
+      "kind": "unit",
+      "context": "單位，前面會接數字；不要刻意拖長或加句尾語氣。"
+    },
+    {
+      "order": 40,
+      "key": "unit_kcal",
+      "labelZh": "大卡（kcal）",
+      "hanji": "大卡",
+      "kind": "unit",
+      "context": "熱量播報單位。正式組句：消耗＋數字＋大卡；不要另外加「熱量」。"
+    },
+    {
+      "order": 41,
+      "key": "decimal_0",
+      "labelZh": "小數第一位是 0：點空",
+      "hanji": "點空",
+      "kind": "number",
+      "context": "重要：0.01 會組成「空＋點空＋一」＝「空點空一」；0.05＝「空點空五」。"
+    },
+    {
+      "order": 42,
+      "key": "decimal_1",
+      "labelZh": "點一",
+      "hanji": "點一",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點一公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 43,
+      "key": "decimal_2",
+      "labelZh": "點二",
+      "hanji": "點二",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點二公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 44,
+      "key": "decimal_3",
+      "labelZh": "點三",
+      "hanji": "點三",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點三公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 45,
+      "key": "decimal_4",
+      "labelZh": "點四",
+      "hanji": "點四",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點四公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 46,
+      "key": "decimal_5",
+      "labelZh": "點五",
+      "hanji": "點五",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點五公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 47,
+      "key": "decimal_6",
+      "labelZh": "點六",
+      "hanji": "點六",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點六公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 48,
+      "key": "decimal_7",
+      "labelZh": "點七",
+      "hanji": "點七",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點七公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 49,
+      "key": "decimal_8",
+      "labelZh": "點八",
+      "hanji": "點八",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點八公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 50,
+      "key": "decimal_9",
+      "labelZh": "點九",
+      "hanji": "點九",
+      "kind": "number",
+      "context": "小數第一位專用。使用情境：一點九公里；請把「點＋數字」連在一起念。"
+    },
+    {
+      "order": 51,
+      "key": "num_zero",
+      "labelZh": "0／零",
+      "hanji": "空",
+      "kind": "number",
+      "context": "數字 0。與 decimal_0 組合時，例如 0.01＝「空點空一」。"
+    },
+    {
+      "order": 52,
+      "key": "num_one_compound",
+      "labelZh": "1（複合）",
+      "hanji": "一",
+      "kind": "number",
+      "context": "複合數字內使用，例如二十一、百零一；請念「一」而不是量詞前的「一」。"
+    },
+    {
+      "order": 53,
+      "key": "num_one_measure",
+      "labelZh": "1（量詞前）",
+      "hanji": "一",
+      "kind": "number",
+      "context": "量詞／單位前使用，例如一公里；請用量詞前自然讀法。"
+    },
+    {
+      "order": 54,
+      "key": "num_two_compound",
+      "labelZh": "2（複合）",
+      "hanji": "二",
+      "kind": "number",
+      "context": "複合數字內使用，例如十二、二十二；請念「二」。"
+    },
+    {
+      "order": 55,
+      "key": "num_two_measure",
+      "labelZh": "2（量詞前）",
+      "hanji": "兩",
+      "kind": "number",
+      "context": "量詞／單位前使用，例如兩公里；請用量詞前自然讀法。"
+    },
+    {
+      "order": 56,
+      "key": "num_three",
+      "labelZh": "3",
+      "hanji": "三",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 57,
+      "key": "num_four",
+      "labelZh": "4",
+      "hanji": "四",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 58,
+      "key": "num_five",
+      "labelZh": "5",
+      "hanji": "五",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 59,
+      "key": "num_six",
+      "labelZh": "6",
+      "hanji": "六",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 60,
+      "key": "num_seven",
+      "labelZh": "7",
+      "hanji": "七",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 61,
+      "key": "num_eight",
+      "labelZh": "8",
+      "hanji": "八",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 62,
+      "key": "num_nine",
+      "labelZh": "9",
+      "hanji": "九",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 63,
+      "key": "num_ten",
+      "labelZh": "十",
+      "hanji": "十",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 64,
+      "key": "num_hundred",
+      "labelZh": "百",
+      "hanji": "百",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 65,
+      "key": "num_thousand",
+      "labelZh": "千",
+      "hanji": "千",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 66,
+      "key": "num_ten_thousand",
+      "labelZh": "萬",
+      "hanji": "萬",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 67,
+      "key": "num_hundred_million",
+      "labelZh": "億",
+      "hanji": "億",
+      "kind": "number",
+      "context": "數字組合素材；前後還會接其他數字或單位，請避免完整句尾感。"
+    },
+    {
+      "order": 68,
+      "key": "enc_great",
+      "labelZh": "好棒喔",
+      "hanji": "真讚喔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 69,
+      "key": "enc_amazing",
+      "labelZh": "好厲害",
+      "hanji": "真𠢕",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 70,
+      "key": "enc_awesome",
+      "labelZh": "太棒了",
+      "hanji": "有夠讚",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 71,
+      "key": "enc_good",
+      "labelZh": "很棒喔",
+      "hanji": "真讚喔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 72,
+      "key": "enc_not_bad",
+      "labelZh": "不錯喔",
+      "hanji": "袂䆀喔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 73,
+      "key": "enc_very_good",
+      "labelZh": "很不錯",
+      "hanji": "真袂䆀",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 74,
+      "key": "enc_can",
+      "labelZh": "可以喔",
+      "hanji": "會使喔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 75,
+      "key": "enc_you_can",
+      "labelZh": "可以的",
+      "hanji": "你會使",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 76,
+      "key": "enc_you_can_do_it",
+      "labelZh": "你可以的",
+      "hanji": "你做會到",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 77,
+      "key": "enc_go",
+      "labelZh": "加油",
+      "hanji": "加油",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 78,
+      "key": "enc_go_again",
+      "labelZh": "再加油",
+      "hanji": "閣加油",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 79,
+      "key": "enc_keep_going",
+      "labelZh": "繼續加油",
+      "hanji": "繼續加油",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 80,
+      "key": "enc_try_more",
+      "labelZh": "再努力",
+      "hanji": "閣拍拚",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 81,
+      "key": "enc_try_little_more",
+      "labelZh": "再努力一下",
+      "hanji": "閣拍拚一下",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 82,
+      "key": "enc_continue",
+      "labelZh": "繼續喔",
+      "hanji": "繼續喔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 83,
+      "key": "enc_keep_it",
+      "labelZh": "繼續保持",
+      "hanji": "繼續保持",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 84,
+      "key": "enc_hold",
+      "labelZh": "撐住／繼續",
+      "hanji": "繼續咧",
+      "kind": "encourage",
+      "context": "鼓勵語。這次不再要求念較難掌握的「撐」。自然講即可。"
+    },
+    {
+      "order": 85,
+      "key": "enc_hold_little",
+      "labelZh": "再撐一下",
+      "hanji": "閣一下",
+      "kind": "encourage",
+      "context": "鼓勵語。短句自然講，不要刻意拖長。"
+    },
+    {
+      "order": 86,
+      "key": "enc_slow",
+      "labelZh": "慢慢來",
+      "hanji": "慢慢仔來",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 87,
+      "key": "enc_steady",
+      "labelZh": "穩穩來",
+      "hanji": "穩穩仔來",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 88,
+      "key": "enc_little_more",
+      "labelZh": "再一下",
+      "hanji": "閣一下",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 89,
+      "key": "enc_tiny_more",
+      "labelZh": "再一點點",
+      "hanji": "閣淡薄仔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 90,
+      "key": "enc_almost",
+      "labelZh": "快到了",
+      "hanji": "欲到矣",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 91,
+      "key": "enc_nearly",
+      "labelZh": "就快到了",
+      "hanji": "就欲到矣",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 92,
+      "key": "enc_small_gap",
+      "labelZh": "差一點點",
+      "hanji": "差淡薄仔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 93,
+      "key": "enc_very_possible",
+      "labelZh": "很可以喔",
+      "hanji": "真會使喔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 94,
+      "key": "enc_progress",
+      "labelZh": "有進步喔",
+      "hanji": "有進步喔",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 95,
+      "key": "enc_today_good",
+      "labelZh": "今天很棒",
+      "hanji": "今仔日真讚",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 96,
+      "key": "enc_nice_work",
+      "labelZh": "做得很好",
+      "hanji": "做甲真好",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 97,
+      "key": "enc_keep",
+      "labelZh": "保持住",
+      "hanji": "保持咧",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 98,
+      "key": "enc_hard_work",
+      "labelZh": "辛苦了",
+      "hanji": "辛苦矣",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    },
+    {
+      "order": 99,
+      "key": "enc_finish",
+      "labelZh": "完成了",
+      "hanji": "完成矣",
+      "kind": "encourage",
+      "context": "鼓勵語，當作一句短句自然說完；語氣穩定，不要拉長尾音。"
+    }
+  ]
+}
