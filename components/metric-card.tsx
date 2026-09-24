@@ -1,0 +1,3 @@
+import { StyleSheet, Text, View } from "react-native";
+export function MetricCard({ label, value, accent = "#13202D" }: { label: string; value: string; accent?: string }) { return <View style={styles.card}><Text style={styles.label}>{label}</Text><Text style={[styles.value,{color:accent}]}>{value}</Text></View>; }
+const styles=StyleSheet.create({card:{backgroundColor:"#FFFFFF",borderRadius:18,paddingHorizontal:16,paddingVertical:14,flex:1,borderWidth:1,borderColor:"#E7EBF0"},label:{color:"#687586",fontSize:12,fontWeight:"600"},value:{fontSize:21,fontWeight:"800",marginTop:5,letterSpacing:-0.4}});
