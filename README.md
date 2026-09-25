@@ -42,6 +42,4 @@ https://play.google.com/store/apps/details?id=com.app.strideroute
 
 ## 授權
 
-目前本 Repository **尚未加入 LICENSE**。在正式授權條款加入前，公開可閱讀原始碼不代表已授權他人複製、修改、再散布或商業使用。
-
-如需使用本專案內容，請先取得作者授權。
+本專案採用 **MIT License**。詳見 [LICENSE](./LICENSE)。
