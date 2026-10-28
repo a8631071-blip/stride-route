@@ -173,6 +173,13 @@ function stateSpeech(type: WorkoutType, state: "start" | "pause" | "resume" | "e
   return translate(key, { mode: workoutLabel(type, locale) }, locale);
 }
 
+function endStateSpeech(type: WorkoutType, session: WorkoutSession, locale: SpeechLocale) {
+  const ended = stateSpeech(type, "end", locale);
+  if (locale !== "zh-TW") return ended;
+  const verb = type === "run" ? "跑了" : type === "bike" ? "騎了" : "走了";
+  return `${ended}。今天一共${verb} ${speechDistance(session.distanceMeters, locale)}。`;
+}
+
 async function announcementLocales(settings: FeatureSettings) {
   const primary = await resolveVoiceLanguage(settings.voiceLanguage);
   if (settings.voiceMode !== "bilingual") return [primary];
@@ -228,14 +235,44 @@ export async function announceWorkoutState(type: WorkoutType, state: "start" | "
   const settings = await readFeatureSettings();
   if (!settings.voiceAnnouncementsEnabled) return;
   voiceQueue = voiceQueue.then(async () => {
+    // V28: the Android Taigi voice pack is loaded dynamically by raw resource name.
+    // Keep the end cue and the detailed summary as separate playback operations so a
+    // summary failure can no longer silence the fixed "運動結束" cue as well.
+    if (state === "end" && session) {
+      const locales = await announcementLocales(settings);
+      for (const locale of locales) {
+        if (locale === "nan-TW" && Platform.OS === "android") {
+          const endOk = await speakConfigured(stateSpeech(type, "end", locale), locale, ["state_end"]);
+          if (!endOk) {
+            await logDiagnosticEvent("voice-end", "nan-TW state_end failed").catch(() => undefined);
+          }
+          const summaryTokens = endSummaryTokens({
+            type,
+            minutes: Math.max(0, Math.round(getElapsedSeconds(session) / 60)),
+            distanceMeters: session.distanceMeters,
+            steps: session.steps,
+            caloriesKcal: session.estimatedCaloriesKcal,
+            encouragementKey: "enc_hard_work",
+            closingKey: "enc_finish",
+          });
+          const summaryOk = await speakConfigured("", locale, summaryTokens);
+          if (!summaryOk) {
+            await logDiagnosticEvent("voice-end", "nan-TW end summary failed").catch(() => undefined);
+          }
+          continue;
+        }
+        const ok = await speakConfigured(endStateSpeech(type, session, locale), locale);
+        if (!ok) {
+          await logDiagnosticEvent("voice-end", `${ttsLanguage(locale)} end summary failed`).catch(() => undefined);
+        }
+      }
+      return;
+    }
+
     await speakAll(
       (locale) => stateSpeech(type, state, locale),
       settings,
-      (locale) => {
-        if (locale !== "nan-TW") return null;
-        if (state === "end" && session) return ["state_end","pause_medium",...endSummaryTokens({type,minutes:Math.max(0,Math.round(getElapsedSeconds(session)/60)),distanceMeters:session.distanceMeters,steps:session.steps,caloriesKcal:session.estimatedCaloriesKcal,encouragementKey:"enc_hard_work",closingKey:"enc_finish"})];
-        return stateTokens(type, state);
-      },
+      (locale) => locale === "nan-TW" ? stateTokens(type, state) : null,
     );
   }).catch(() => undefined);
   await voiceQueue;

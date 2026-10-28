@@ -1,34 +1,28 @@
-# Dependencies / Expo
 node_modules/
 .expo/
 dist/
-web-build/
-
-# Android build / local
+build/
+.gradle/
 android/.gradle/
-android/build/
 android/app/build/
-android/local.properties
-android/.idea/
-*.iml
-*.hprof
-.cxx/
-
-# Signing / secrets
-signing/
-*.jks
-*.keystore
-*.p12
-*.pem
-keystore.properties
+android/app/debug.keystore
+**/*.keystore
+**/*.jks
+**/*.pem
+**/*.p12
+**/*.p8
+**/*.key
 .env
 .env.*
-
-# OS / editor
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Bundle artifacts
-*.jsbundle
+signing/
+**/*PRIVATE*
+**/voicepack/
+modules/stride-tts/android/src/main/res/raw/*.wav
+modules/stride-tts/android/src/main/res/raw/*.mp3
+modules/stride-tts/android/src/main/res/raw/*.m4a
+**/RAW199*
+**/*mapping*
+**/TEST_REPORT*
+**/*_SOURCE_MANIFEST.csv
+.engineering-log.md
+AI_ANALYSIS.md

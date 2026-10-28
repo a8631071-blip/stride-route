@@ -1,45 +1,22 @@
-# 步跡（Stride Route）
+# 步跡（Stride Route）— 公開原始碼 V30
 
-「步跡」是一款免費、無廣告的 Android GPS 運動軌跡與日常計步 App，可用於步行、跑步與騎乘紀錄。
+此儲存庫對應步跡 **V30 / 3.3.1（Android versionCode 26）**。
 
-## 主要功能
+## 功能
+- Android GPS 步行、跑步、騎乘紀錄及日常計步
+- 運動距離、時間、步數與歷史紀錄
+- 健康資料、背景運動記錄、語音播報
+- 台語播報組音程式：`lib/fitness/taigi-speech-composer.ts`、`modules/stride-tts/`
 
-- GPS 記錄步行、跑步與騎乘路線
-- 顯示距離、時間、速度、配速與步數
-- 日常計步器
-- 運動歷史紀錄
-- 背景運動路線記錄
-- Android Health Connect 步數整合
-- 運動語音播報與相關 Android 原生模組
+## 技術
+React Native / Expo SDK 54 / TypeScript，含 Android Kotlin 原生模組。
+
+## 重要說明
+本公開來源**不包含私人簽章、PRIVATE 建置腳本、個人真人錄音 WAV、語音包與測試診斷資料**。完整台語播放需由專案持有者將原有音檔恢復至 `modules/stride-tts/android/src/main/res/raw/`；缺少語音素材時不代表台語引擎已完整可播放。
+
+設定的正式 App 版本請以 `app.config.ts` 為準。Android 原生目錄可能由 Expo prebuild 重新生成，請勿直接拿舊的 `android/app/build.gradle` 版本作為正式發布依據。
 
 ## Google Play
-
 https://play.google.com/store/apps/details?id=com.app.strideroute
 
-## 開發環境
-
-- React Native
-- Expo SDK 54
-- TypeScript
-- Android minSdk 26 / targetSdk 36
-
-## 專案結構
-
-- `app/`：App 畫面與路由
-- `components/`：共用介面元件
-- `lib/`：功能邏輯、運動與計步相關程式
-- `modules/stride-activity-recognition/`：活動辨識原生模組
-- `modules/stride-tts/`：運動語音播報模組與語音資源
-- `modules/stride-widget/`：Android Widget 原生模組
-- `android/`：Android 原生專案與設定
-- `plugins/`：Expo config plugins
-
-## 公開版原始碼
-
-此 Repository 為「步跡」公開版原始碼。公開內容已排除正式商店簽章檔、簽章密碼、私人憑證與私人建置資料；Google Play 正式版本使用的簽章資料不包含於本專案。
-
-目前公開版對應 App 版本：**3.2.7**。
-
-## 授權
-
-本專案採用 **MIT License**。詳見 [LICENSE](./LICENSE)。
+此處僅維護公開程式碼，不包含可直接發布至商店的正式簽章或私人建置材料。

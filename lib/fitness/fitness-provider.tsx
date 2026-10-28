@@ -22,7 +22,7 @@ import {
 } from "@/modules/stride-widget";
 import { startBackgroundLocationTracking, stopBackgroundLocationTracking } from "./background-location";
 import { buildNativeWorkoutVoiceConfig, maybeAnnounceWorkoutProgress } from "./speech";
-import { getWorkoutRuntimeSnapshot, pauseWorkoutRuntime, readWorkoutRuntimePoints, resumeWorkoutRuntime, startWorkoutRuntime, stopWorkoutRuntime, type WorkoutRuntimeConfig } from "@/modules/stride-tts";
+import { getWorkoutRuntimeSnapshot, pauseWorkoutRuntime, readWorkoutRuntimePoints, resumeWorkoutRuntime, startWorkoutRuntime, stopWorkoutRuntime, type WorkoutRuntimeConfig, type WorkoutRuntimeSnapshot } from "@/modules/stride-tts";
 import { dateKey, GPS_PROFILES } from "./math";
 import {
   completeWorkoutRecord,
@@ -43,8 +43,11 @@ import {
   writeDailySteps,
   writeSettings,
   appendPointsToActiveWorkout,
+  applyNativeWorkoutRuntime,
   flushRouteMutations,
   logDiagnosticEvent,
+  readNativeRuntimeSeed,
+  recoverActiveWorkoutSegment,
 } from "./storage";
 import {
   getHealthConnectState,
@@ -66,6 +69,7 @@ type FitnessContextValue = {
   dailySteps: number | null;
   stepHistory: DailyStepHistory;
   liveWorkoutSteps: number;
+  liveSpeedMps: number;
   pedometerState: PermissionState;
   healthConnectState: HealthConnectState;
   locationState: PermissionState;
@@ -112,6 +116,7 @@ export function FitnessProvider({ children }: PropsWithChildren) {
   const [dailySteps, setDailySteps] = useState<number | null>(null);
   const [stepHistory, setStepHistory] = useState<DailyStepHistory>({});
   const [liveWorkoutSteps, setLiveWorkoutSteps] = useState(0);
+  const [liveSpeedMps, setLiveSpeedMps] = useState(0);
   const [pedometerState, setPedometerState] = useState<PermissionState>("unknown");
   const [healthConnectState, setHealthConnectState] = useState<HealthConnectState>("unknown");
   const [locationState, setLocationState] = useState<PermissionState>("unknown");
@@ -290,22 +295,30 @@ export function FitnessProvider({ children }: PropsWithChildren) {
   }, []);
 
   const nativeRuntimeConfig = useCallback(async (session: WorkoutSession): Promise<WorkoutRuntimeConfig> => {
-    const voice = await buildNativeWorkoutVoiceConfig();
+    const [voice, seed] = await Promise.all([buildNativeWorkoutVoiceConfig(), readNativeRuntimeSeed(session.id)]);
     return {
       workoutId: session.id,
       workoutType: session.type,
       startedAt: session.startedAt,
       segmentIndex: session.currentSegmentIndex,
+      distanceSeedMeters: seed.distanceMeters,
+      shadowWeightedSeedMeters: seed.shadowWeightedDistanceMeters,
+      shadowKalmanSeedMeters: seed.shadowKalmanDistanceMeters,
+      maxSpeedSeedMps: seed.maxSpeedMps,
+      sequenceSeed: seed.sequence,
       ...voice,
       notificationTitle: translate("background.notificationTitle"),
       notificationBody: translate("background.notificationBody"),
     };
   }, []);
 
-  const syncNativeWorkoutRuntime = useCallback(async () => {
+  const syncNativeWorkoutRuntime = useCallback(async (snapshotOverride?: WorkoutRuntimeSnapshot | null) => {
     if (Platform.OS !== "android") return null;
     const active = activeWorkoutRef.current;
     if (!active) return null;
+
+    const snapshot = snapshotOverride ?? getWorkoutRuntimeSnapshot();
+    if (!snapshot || snapshot.workoutId !== active.id) return readActiveWorkout();
 
     const points = readWorkoutRuntimePoints(nativeRuntimeSequenceRef.current);
     if (points.length) {
@@ -313,24 +326,14 @@ export function FitnessProvider({ children }: PropsWithChildren) {
         nativeRuntimeSequenceRef.current,
         ...points.map((point) => point.sequence),
       );
-      await appendPointsToActiveWorkout(points.map((point) => ({
-        latitude: point.latitude,
-        longitude: point.longitude,
-        timestamp: point.timestamp,
-        accuracy: point.accuracy,
-        speed: point.speed,
-        altitude: point.altitude,
-        segmentIndex: point.segmentIndex,
-        source: "background" as const,
-      })));
     }
 
-    const updated = await readActiveWorkout();
+    const updated = await applyNativeWorkoutRuntime(active.id, points, snapshot);
+    setLiveSpeedMps(snapshot.status === "active" ? Math.max(0, snapshot.currentSpeedMps) : 0);
     if (updated) {
       setActiveWorkout(updated);
       activeWorkoutRef.current = updated;
-      const snapshot = getWorkoutRuntimeSnapshot();
-      if (snapshot?.lastLocationAt) {
+      if (snapshot.lastLocationAt) {
         if (Date.now() - snapshot.lastLocationAt > 20_000) {
           setGpsFixState("weak");
         } else if (snapshot.lastAccuracy != null && snapshot.lastAccuracy > GPS_PROFILES[updated.type].maxAccuracyMeters) {
@@ -366,8 +369,20 @@ export function FitnessProvider({ children }: PropsWithChildren) {
 
     if (Platform.OS === "android") {
       await stopBackgroundLocationTracking().catch(() => undefined);
-      const session = activeWorkoutRef.current;
+      let session = activeWorkoutRef.current;
       if (!session) return;
+      const snapshotBeforeStart = getWorkoutRuntimeSnapshot();
+      const nativeMissingForActiveWorkout =
+        (session.distanceMeters > 0 || session.route.length > 0) &&
+        (!snapshotBeforeStart || snapshotBeforeStart.workoutId !== session.id || snapshotBeforeStart.status === "stopped");
+      if (nativeMissingForActiveWorkout) {
+        const recovered = await recoverActiveWorkoutSegment(session.id).catch(() => null);
+        if (recovered) {
+          session = recovered;
+          setActiveWorkout(recovered);
+          activeWorkoutRef.current = recovered;
+        }
+      }
       const config = await nativeRuntimeConfig(session);
       const started = await startWorkoutRuntime(config);
       if (!started) throw new Error("native workout runtime start failed");
@@ -473,19 +488,29 @@ export function FitnessProvider({ children }: PropsWithChildren) {
     }
 
     setGpsFixState("searching");
-    const position = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High }).catch(() => null);
-    const maxAccuracy = GPS_PROFILES[type].maxAccuracyMeters;
-    const stableInitialPosition = position?.coords.accuracy != null && position.coords.accuracy <= Math.min(20, maxAccuracy) ? position : null;
-    if (stableInitialPosition) setGpsFixState("fixed");
-    else if (position?.coords.accuracy != null) {
-      setGpsFixState("weak");
-      setLocationMessage(translate("provider.gpsWeakStart"));
+    let initialPoint: RoutePoint | null = null;
+    if (Platform.OS !== "android") {
+      const position = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High }).catch(() => null);
+      const maxAccuracy = GPS_PROFILES[type].maxAccuracyMeters;
+      const stableInitialPosition = position?.coords.accuracy != null && position.coords.accuracy <= Math.min(20, maxAccuracy) ? position : null;
+      if (stableInitialPosition) {
+        setGpsFixState("fixed");
+        initialPoint = { ...toRoutePoint(stableInitialPosition), source: "initial" };
+      } else if (position?.coords.accuracy != null) {
+        setGpsFixState("weak");
+        setLocationMessage(translate("provider.gpsWeakStart"));
+      } else {
+        setLocationMessage(translate("provider.gpsSearchingStart"));
+      }
     } else {
+      // V29 Android: Native runtime owns the one and only route anchor.
+      // Do not inject a separate JS initial location into SQLite/distance.
       setLocationMessage(translate("provider.gpsSearchingStart"));
     }
 
-    const workout = createWorkout(type, stableInitialPosition ? { ...toRoutePoint(stableInitialPosition), source: "initial" } : null);
+    const workout = createWorkout(type, initialPoint);
     nativeRuntimeSequenceRef.current = 0;
+    setLiveSpeedMps(0);
     lastPersistedWorkoutStepsRef.current = 0;
     setLiveWorkoutSteps(0);
     await insertWorkout(workout);
@@ -515,6 +540,7 @@ export function FitnessProvider({ children }: PropsWithChildren) {
       await stopAllLocationTracking();
     }
     setGpsFixState("paused");
+    setLiveSpeedMps(0);
     await flushRouteMutations();
     const pausedAt = Date.now();
     const native = getStrideStepSnapshot();
@@ -529,7 +555,7 @@ export function FitnessProvider({ children }: PropsWithChildren) {
     await pauseWorkoutRecord(active.id, steps, pausedAt);
     const updated = await readActiveWorkout();
     setActiveWorkout(updated); activeWorkoutRef.current = updated;
-  }, [liveWorkoutSteps, readWorkoutStepsFromHealthConnect, stopAllLocationTracking]);
+  }, [liveWorkoutSteps, readWorkoutStepsFromHealthConnect, stopAllLocationTracking, syncNativeWorkoutRuntime]);
 
   const resumeWorkout = useCallback(async () => {
     const active = activeWorkoutRef.current;
@@ -555,9 +581,29 @@ export function FitnessProvider({ children }: PropsWithChildren) {
     const active = activeWorkoutRef.current;
     if (!active) return null;
     if (active.type !== "bike") await pauseStrideWorkoutStepSession(active.id).catch(() => false);
+    let finalRuntimeSnapshot: WorkoutRuntimeSnapshot | null = null;
     if (Platform.OS === "android") {
-      await stopWorkoutRuntime().catch(() => undefined);
-      await syncNativeWorkoutRuntime().catch(() => undefined);
+      finalRuntimeSnapshot = await stopWorkoutRuntime().catch(() => null);
+      await syncNativeWorkoutRuntime(finalRuntimeSnapshot).catch(() => undefined);
+      if (finalRuntimeSnapshot?.workoutId === active.id) {
+        await logDiagnosticEvent("gps-v30", JSON.stringify({
+          workoutId: active.id,
+          distanceMeters: finalRuntimeSnapshot.distanceMeters,
+          shadowWeightedDistanceMeters: finalRuntimeSnapshot.shadowWeightedDistanceMeters,
+          shadowKalmanDistanceMeters: finalRuntimeSnapshot.shadowKalmanDistanceMeters,
+          shadowFilterResets: finalRuntimeSnapshot.shadowFilterResets,
+          maxSpeedMps: finalRuntimeSnapshot.maxSpeedMps,
+          acceptedPoints: finalRuntimeSnapshot.acceptedPoints,
+          rejectedPoints: finalRuntimeSnapshot.rejectedPoints,
+          rejectedInvalid: finalRuntimeSnapshot.rejectedInvalid,
+          rejectedAccuracy: finalRuntimeSnapshot.rejectedAccuracy,
+          rejectedTooClose: finalRuntimeSnapshot.rejectedTooClose,
+          rejectedSpeed: finalRuntimeSnapshot.rejectedSpeed,
+          rejectedTime: finalRuntimeSnapshot.rejectedTime,
+          maxGapMs: finalRuntimeSnapshot.maxGapMs,
+          finalSequence: finalRuntimeSnapshot.sequence,
+        })).catch(() => undefined);
+      }
     } else {
       await stopAllLocationTracking();
     }
@@ -571,12 +617,12 @@ export function FitnessProvider({ children }: PropsWithChildren) {
     }
     const completed = await completeWorkoutRecord(active.id, steps, endedAt, settingsRef.current.weightKg);
     if (active.type !== "bike") await stopStrideWorkoutStepSession(active.id).catch(() => false);
-    setActiveWorkout(null); activeWorkoutRef.current = null; setLiveWorkoutSteps(0); setGpsFixState("searching");
+    setActiveWorkout(null); activeWorkoutRef.current = null; setLiveWorkoutSteps(0); setLiveSpeedMps(0); setGpsFixState("searching");
     setPedometerMessage(null);
     await refreshSessions();
     await syncDailySteps().catch(() => undefined);
     return completed;
-  }, [liveWorkoutSteps, readWorkoutStepsFromHealthConnect, refreshSessions, stopAllLocationTracking, syncDailySteps]);
+  }, [liveWorkoutSteps, readWorkoutStepsFromHealthConnect, refreshSessions, stopAllLocationTracking, syncDailySteps, syncNativeWorkoutRuntime]);
 
   const deleteWorkout = useCallback(async (id: string) => {
     if (activeWorkoutRef.current?.id === id) {
@@ -603,7 +649,14 @@ export function FitnessProvider({ children }: PropsWithChildren) {
       settingsRef.current = savedSettings; setSettings(savedSettings);
       setSessions(summary); setActiveWorkout(active); activeWorkoutRef.current = active;
       setDailySteps(today.steps); dailyDisplayStepsRef.current = today.steps; setStepHistory(history); persistedDailyStepsRef.current = today.steps;
-      if (active) { lastPersistedWorkoutStepsRef.current = active.steps; setLiveWorkoutSteps(active.type === "bike" ? 0 : active.steps); }
+      if (active) {
+        lastPersistedWorkoutStepsRef.current = active.steps;
+        setLiveWorkoutSteps(active.type === "bike" ? 0 : active.steps);
+        if (Platform.OS === "android") {
+          const seed = await readNativeRuntimeSeed(active.id).catch(() => null);
+          nativeRuntimeSequenceRef.current = seed?.sequence ?? 0;
+        }
+      }
       await refreshPermissionStates().catch(() => undefined);
       const hcState = await getHealthConnectState();
       if (!cancelled) { setHealthConnectState(hcState); healthConnectStateRef.current = hcState; }
@@ -623,8 +676,9 @@ export function FitnessProvider({ children }: PropsWithChildren) {
         if (active && active.type !== "bike") await syncActiveWorkoutStepsFromHealthConnect().catch(() => undefined);
       }
       void updateStrideWidget(dailyDisplayStepsRef.current, savedSettings.dailyStepGoal, Date.now()).catch(() => undefined);
+      if (Platform.OS === "android" && active) await syncNativeWorkoutRuntime().catch(() => undefined);
       if (active?.status === "active") await startLocationWriter().catch(() => undefined);
-      if (active?.status === "paused") setGpsFixState("paused");
+      if (active?.status === "paused") { setGpsFixState("paused"); setLiveSpeedMps(0); }
       if (!cancelled) setIsReady(true);
     };
     void load();
@@ -663,7 +717,7 @@ export function FitnessProvider({ children }: PropsWithChildren) {
       nativeStepSubscriptionRef.current = null;
       void stopActivityRecognition().catch(() => undefined);
     };
-  }, [applyNativeStepSnapshot, refreshPermissionStates, refreshSessions, startLocationWriter, startNativeStepCounter, syncActiveWorkoutStepsFromHealthConnect, syncDailySteps]);
+  }, [applyNativeStepSnapshot, refreshPermissionStates, refreshSessions, startLocationWriter, startNativeStepCounter, syncActiveWorkoutStepsFromHealthConnect, syncDailySteps, syncNativeWorkoutRuntime]);
 
   useEffect(() => {
     if (Platform.OS !== "android") return;
@@ -696,6 +750,7 @@ export function FitnessProvider({ children }: PropsWithChildren) {
         if (!updated || updated.id !== activeWorkoutRef.current?.id) return;
         setActiveWorkout(updated); activeWorkoutRef.current = updated;
         void maybeAnnounceWorkoutProgress(updated).catch(() => undefined);
+        if (Platform.OS === "android") return; // Native snapshot already owns Android GPS fix freshness/accuracy.
         const latest = updated.route.at(-1);
         if (!latest) {
           setGpsFixState("searching");
@@ -711,12 +766,12 @@ export function FitnessProvider({ children }: PropsWithChildren) {
   }, [activeWorkout?.id, activeWorkout?.status, syncNativeWorkoutRuntime]);
 
   const value = useMemo<FitnessContextValue>(() => ({
-    isReady, settings, sessions, activeWorkout, dailySteps, stepHistory, liveWorkoutSteps,
+    isReady, settings, sessions, activeWorkout, dailySteps, stepHistory, liveWorkoutSteps, liveSpeedMps,
     pedometerState, healthConnectState, locationState, backgroundLocationState, gpsFixState, locationMessage, pedometerMessage,
     enableStepTracking, syncDailySteps, requestForegroundLocation, setBackgroundTrackingEnabled, setDailyStepGoal, setHeightCm, setWeightKg, markGpsRecommendationShown,
     startWorkout, pauseWorkout, resumeWorkout, completeWorkout, deleteWorkout, loadWorkout, refreshSessions, refreshStepHistory,
   }), [
-    isReady, settings, sessions, activeWorkout, dailySteps, stepHistory, liveWorkoutSteps,
+    isReady, settings, sessions, activeWorkout, dailySteps, stepHistory, liveWorkoutSteps, liveSpeedMps,
     pedometerState, healthConnectState, locationState, backgroundLocationState, gpsFixState, locationMessage, pedometerMessage,
     enableStepTracking, syncDailySteps, requestForegroundLocation, setBackgroundTrackingEnabled, setDailyStepGoal, setHeightCm, setWeightKg, markGpsRecommendationShown,
     startWorkout, pauseWorkout, resumeWorkout, completeWorkout, deleteWorkout, loadWorkout, refreshSessions, refreshStepHistory,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 
@@ -26,7 +26,7 @@ export default function WorkoutScreen() {
   const requestedMode = modes.some((mode) => mode.type === params.mode) ? params.mode as WorkoutType : null;
   const [selectedType, setSelectedType] = useState<WorkoutType>(requestedMode ?? "walk");
   const {
-    activeWorkout, backgroundLocationState, completeWorkout, liveWorkoutSteps, gpsFixState, locationMessage, pedometerMessage,
+    activeWorkout, backgroundLocationState, completeWorkout, liveWorkoutSteps, liveSpeedMps, gpsFixState, locationMessage, pedometerMessage,
     pauseWorkout, resumeWorkout, setBackgroundTrackingEnabled, settings, startWorkout,
   } = useFitness();
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
@@ -88,7 +88,7 @@ export default function WorkoutScreen() {
 
   const isBike = activeWorkout.type === "bike";
   const isShopping = activeWorkout.type === "shopping";
-  const currentSpeedMps = recentSpeedMps(activeWorkout.route);
+  const currentSpeedMps = Platform.OS === "android" ? liveSpeedMps : recentSpeedMps(activeWorkout.route);
   const gpsStatusLabel = !isRecording ? t("workout.statusPaused") : gpsFixState === "fixed" ? t("workout.statusFixed") : gpsFixState === "weak" ? t("workout.statusWeak") : gpsFixState === "off" ? t("workout.statusOff") : t("workout.statusSearching");
   return <ScreenContainer className="px-5" containerClassName="bg-background"><ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
     <View style={styles.topRow}><View><Text style={styles.kicker}>{isRecording ? t("workout.recording") : t("workout.paused")}</Text><Text style={styles.pageTitle}>{workoutLabel(activeWorkout.type)}</Text></View><View style={[styles.statusPill, !isRecording && styles.pausedPill]}><View style={[styles.dot, !isRecording && styles.pausedDot]} /><Text style={[styles.statusText, !isRecording && styles.pausedText]}>{gpsStatusLabel}</Text></View></View>

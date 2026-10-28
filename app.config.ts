@@ -3,7 +3,7 @@ import type { ExpoConfig } from "expo/config";
 const config: ExpoConfig = {
   name: "步跡",
   slug: "stride-route",
-  version: "3.2.7",
+  version: "3.3.1",
   orientation: "portrait",
   icon: "./assets/images/icon.png",
   scheme: "strideroute",
@@ -18,7 +18,7 @@ const config: ExpoConfig = {
   },
   android: {
     package: "com.app.strideroute",
-    versionCode: 22,
+    versionCode: 26,
     allowBackup: false,
     blockedPermissions: [
       "android.permission.READ_EXTERNAL_STORAGE",
@@ -86,7 +86,7 @@ const config: ExpoConfig = {
           enableMinifyInReleaseBuilds: true,
           enableShrinkResourcesInReleaseBuilds: true,
           extraProguardRules: `
-# StrideRoute V26: keep R8/resource shrinking enabled, but preserve Expo Modules
+# StrideRoute V30: keep R8/resource shrinking enabled, but preserve Expo Modules
 # record metadata/classes used by expo-sqlite to convert JS option maps into
 # OpenDatabaseOptions at NativeDatabase construction time.
 -keep class com.swmansion.reanimated.** { *; }

@@ -11,8 +11,10 @@ export const WORKOUT_LABELS: Record<WorkoutType, string> = {
   bike: "自行車",
 };
 
+// V29 Android does NOT use evaluateRoutePoint() for route acceptance or distance.
+// These profiles remain only for the existing non-Android Expo Location fallback and UI accuracy labels.
 export const GPS_PROFILES: Record<WorkoutType, { maxAccuracyMeters: number; maxSpeedMps: number; minDistanceMeters: number; minTimeMs: number; driftCapMeters: number; driftAccuracyFactor: number }> = {
-  // Existing profiles are intentionally unchanged. Shopping gets its own stop-and-go filter.
+  // Keep non-Android behavior unchanged in V29; Android authority lives in StrideWorkoutRuntimeService.
   walk: { maxAccuracyMeters: 40, maxSpeedMps: 4.5, minDistanceMeters: 3, minTimeMs: 1_000, driftCapMeters: 8, driftAccuracyFactor: 0.2 },
   run: { maxAccuracyMeters: 35, maxSpeedMps: 9.5, minDistanceMeters: 3, minTimeMs: 800, driftCapMeters: 8, driftAccuracyFactor: 0.2 },
   shopping: { maxAccuracyMeters: 35, maxSpeedMps: 4.5, minDistanceMeters: 4, minTimeMs: 1_200, driftCapMeters: 10, driftAccuracyFactor: 0.3 },

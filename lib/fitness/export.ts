@@ -18,16 +18,24 @@ export async function exportWorkoutCsv(sessions: WorkoutSession[]) {
   const completed = sessions.filter((session) => session.status === "completed");
   if (!FileSystem.cacheDirectory) throw new Error("Cache directory unavailable");
   const headers = [
-    "started_at", "ended_at", "type", "duration_seconds", "distance_meters", "steps",
+    "started_at", "ended_at", "type", "duration_seconds", "distance_meters",
+    "gps_weighted_shadow_meters", "gps_kalman_shadow_meters", "gps_weighted_vs_official_pct", "gps_kalman_vs_official_pct", "steps",
     "average_pace_sec_per_km", "average_speed_kmh", "average_step_cm", "estimated_calories_kcal",
   ];
   const rows = completed.map((session) => {
     const pace = session.type === "bike" || session.type === "shopping" ? null : averagePaceSecondsPerKm(session.distanceMeters, session.durationSeconds);
     const speed = averageSpeedKmh(session.distanceMeters, session.durationSeconds);
     const stepCm = session.type === "bike" ? null : averageStepDistanceCm(session.distanceMeters, session.steps);
+    const weightedPct = session.gpsWeightedShadowMeters == null || session.distanceMeters <= 0 ? null : (session.gpsWeightedShadowMeters / session.distanceMeters - 1) * 100;
+    const kalmanPct = session.gpsKalmanShadowMeters == null || session.distanceMeters <= 0 ? null : (session.gpsKalmanShadowMeters / session.distanceMeters - 1) * 100;
     return [
       isoDate(session.startedAt), session.endedAt ? isoDate(session.endedAt) : "", session.type,
-      session.durationSeconds, Math.round(session.distanceMeters * 10) / 10, session.steps,
+      session.durationSeconds, Math.round(session.distanceMeters * 10) / 10,
+      session.gpsWeightedShadowMeters == null ? "" : Math.round(session.gpsWeightedShadowMeters * 10) / 10,
+      session.gpsKalmanShadowMeters == null ? "" : Math.round(session.gpsKalmanShadowMeters * 10) / 10,
+      weightedPct == null ? "" : Math.round(weightedPct * 100) / 100,
+      kalmanPct == null ? "" : Math.round(kalmanPct * 100) / 100,
+      session.steps,
       pace == null ? "" : Math.round(pace * 10) / 10,
       speed == null ? "" : Math.round(speed * 100) / 100,
       stepCm == null ? "" : Math.round(stepCm * 10) / 10,

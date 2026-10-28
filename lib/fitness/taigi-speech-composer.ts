@@ -149,6 +149,7 @@ export function distanceTokens(distanceMeters:number):string[] {
   const out:string[]=[];
   if(whole>0)out.push(...integerTokens(whole,true));
   else if(fraction===0)out.push("num_zero");
+  else out.push("num_zero_decimal_prefix");
   if(fraction>0)out.push(`decimal_full_${String(fraction).padStart(2,"0")}`);
   out.push("unit_kilometer");
   return out;
@@ -180,7 +181,6 @@ export function endSummaryTokens(input:{
   encouragementKey?:string;closingKey?:string;
 }):string[] {
   const out:string[]=[
-    ...(input.encouragementKey?[input.encouragementKey,"pause_short"]:[]),
     "word_today","word_total",movementVerb(input.type,true),...distanceTokens(input.distanceMeters),
     "pause_medium",...summaryTimeTokens(input.minutes)
   ];
@@ -192,6 +192,7 @@ export function endSummaryTokens(input:{
     const fullCalories=precomposedCalorieToken(input.caloriesKcal);
     out.push("pause_medium",...(fullCalories?[fullCalories]:["phrase_calories",...integerTokens(Math.max(0,Math.round(input.caloriesKcal)),true),"unit_kcal"]));
   }
+  if(input.encouragementKey)out.push("pause_long",input.encouragementKey);
   if(input.closingKey)out.push("pause_long",input.closingKey);
   return out;
 }

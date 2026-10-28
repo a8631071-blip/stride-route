@@ -4,6 +4,7 @@ import { translate } from "@/lib/i18n-core";
 import { getFitnessDatabase, initFitnessDatabase } from "./database";
 import { calculateDistanceBetweenPoints, dateKey, estimateWorkoutCalories, evaluateRoutePoint, simplifyRoute } from "./math";
 import type { AppSettings, DailyStepHistory, DailyStepSnapshot, DailyStepSource, RoutePoint, WorkoutSession, WorkoutType } from "./types";
+import type { WorkoutRuntimePoint, WorkoutRuntimeSnapshot } from "@/modules/stride-tts";
 
 const SETTINGS_KEY = "stride-route.settings.v10";
 const LEGACY_SETTINGS_KEYS = ["stride-route.settings.v3", "stride-route.settings.v2"];
@@ -45,6 +46,8 @@ function normalizeLegacySession(raw: Partial<WorkoutSession> & Pick<WorkoutSessi
     pausedSeconds: raw.pausedSeconds ?? 0,
     durationSeconds: raw.durationSeconds ?? 0,
     distanceMeters: raw.distanceMeters ?? 0,
+    gpsWeightedShadowMeters: raw.gpsWeightedShadowMeters ?? null,
+    gpsKalmanShadowMeters: raw.gpsKalmanShadowMeters ?? null,
     steps: raw.steps ?? 0,
     maxSpeedMps: raw.maxSpeedMps ?? 0,
     currentSegmentIndex: raw.currentSegmentIndex ?? 0,
@@ -144,6 +147,8 @@ function rowToWorkout(row: any, route: RoutePoint[] = []): WorkoutSession {
     pausedSeconds: Number(row.paused_seconds ?? 0),
     durationSeconds: Number(row.duration_seconds ?? 0),
     distanceMeters: Number(row.distance_meters ?? 0),
+    gpsWeightedShadowMeters: row.gps_weighted_shadow_meters == null ? null : Number(row.gps_weighted_shadow_meters),
+    gpsKalmanShadowMeters: row.gps_kalman_shadow_meters == null ? null : Number(row.gps_kalman_shadow_meters),
     steps: Number(row.steps ?? 0),
     maxSpeedMps: Number(row.max_speed_mps ?? 0),
     currentSegmentIndex: Number(row.current_segment_index ?? 0),
@@ -202,7 +207,7 @@ export function createWorkout(type: WorkoutType, initialPoint: RoutePoint | null
   return {
     id: `${startedAt.toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
     type, startedAt, endedAt: null, pausedAt: null, pausedSeconds: 0, durationSeconds: 0,
-    distanceMeters: 0, steps: 0, maxSpeedMps: 0, currentSegmentIndex: 0,
+    distanceMeters: 0, gpsWeightedShadowMeters: null, gpsKalmanShadowMeters: null, steps: 0, maxSpeedMps: 0, currentSegmentIndex: 0,
     route, previewRoute: route, status: "active", weightKgAtCompletion: null, estimatedCaloriesKcal: null,
   };
 }
@@ -269,6 +274,20 @@ export async function resumeWorkoutRecord(id: string, resumedAt = Date.now()) {
     await db.runAsync("UPDATE workouts SET status='active',paused_at=NULL,paused_seconds=?,current_segment_index=? WHERE id=?", pausedSeconds, nextSegment, id);
     await db.runAsync("INSERT OR IGNORE INTO workout_segments (workout_id,segment_index,started_at,ended_at) VALUES (?,?,?,NULL)", id, nextSegment, resumedAt);
   });
+}
+
+export async function recoverActiveWorkoutSegment(id: string, recoveredAt = Date.now()) {
+  const db = await getFitnessDatabase();
+  await db.withTransactionAsync(async () => {
+    const row = await db.getFirstAsync<any>("SELECT current_segment_index FROM workouts WHERE id=? AND status='active'", id);
+    if (!row) return;
+    const currentSegment = Number(row.current_segment_index ?? 0);
+    const nextSegment = currentSegment + 1;
+    await db.runAsync("UPDATE workout_segments SET ended_at=? WHERE workout_id=? AND segment_index=? AND ended_at IS NULL", recoveredAt, id, currentSegment);
+    await db.runAsync("UPDATE workouts SET current_segment_index=? WHERE id=? AND status='active'", nextSegment, id);
+    await db.runAsync("INSERT OR IGNORE INTO workout_segments (workout_id,segment_index,started_at,ended_at) VALUES (?,?,?,NULL)", id, nextSegment, recoveredAt);
+  });
+  return readWorkoutSession(id);
 }
 
 export async function completeWorkoutRecord(id: string, steps: number, endedAt = Date.now(), weightKg?: number | null) {
@@ -344,6 +363,142 @@ export function appendPointsToActiveWorkout(points: RoutePoint[]) {
         previous = point;
       }
       await db.runAsync("UPDATE workouts SET distance_meters=?,max_speed_mps=? WHERE id=?", distanceMeters, maxSpeedMps, workoutId);
+    });
+    return readWorkoutSession(workoutId);
+  });
+  routeMutationQueue = operation.catch(() => undefined);
+  return operation;
+}
+
+export async function readNativeRuntimeSeed(workoutId: string) {
+  const db = await getFitnessDatabase();
+  const workout = await db.getFirstAsync<any>("SELECT distance_meters,gps_weighted_shadow_meters,gps_kalman_shadow_meters,max_speed_mps,current_segment_index FROM workouts WHERE id=?", workoutId);
+  const sequence = await db.getFirstAsync<{ sequence: number | null }>("SELECT MAX(native_sequence) AS sequence FROM track_points WHERE workout_id=?", workoutId);
+  return {
+    distanceMeters: Number(workout?.distance_meters ?? 0),
+    shadowWeightedDistanceMeters: Number(workout?.gps_weighted_shadow_meters ?? 0),
+    shadowKalmanDistanceMeters: Number(workout?.gps_kalman_shadow_meters ?? 0),
+    maxSpeedMps: Number(workout?.max_speed_mps ?? 0),
+    segmentIndex: Number(workout?.current_segment_index ?? 0),
+    sequence: Number(sequence?.sequence ?? 0),
+  };
+}
+
+export function applyNativeWorkoutRuntime(workoutId: string, points: WorkoutRuntimePoint[], snapshot: WorkoutRuntimeSnapshot | null) {
+  const operation = routeMutationQueue.then(async () => {
+    const db = await getFitnessDatabase();
+    const workoutRow = await db.getFirstAsync<any>("SELECT id,status FROM workouts WHERE id=? AND status IN ('active','paused')", workoutId);
+    if (!workoutRow) return null;
+
+    await db.withTransactionAsync(async () => {
+      for (const point of [...points].sort((a, b) => a.sequence - b.sequence)) {
+        const insert = await db.runAsync(
+          `INSERT OR IGNORE INTO track_points
+            (workout_id,segment_index,latitude,longitude,timestamp,accuracy,speed,altitude,source,accepted,reject_reason,
+             native_sequence,elapsed_realtime_nanos,distance_delta_meters,cumulative_distance_meters,derived_speed_mps,
+             shadow_weighted_latitude,shadow_weighted_longitude,shadow_weighted_delta_meters,shadow_weighted_cumulative_meters,
+             shadow_kalman_latitude,shadow_kalman_longitude,shadow_kalman_delta_meters,shadow_kalman_cumulative_meters,shadow_filter_reset)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+          workoutId,
+          point.segmentIndex,
+          point.latitude,
+          point.longitude,
+          point.timestamp,
+          point.accuracy,
+          point.speed,
+          point.altitude,
+          "native",
+          point.accepted ? 1 : 0,
+          point.rejectReason,
+          Math.round(point.sequence),
+          Math.round(point.elapsedRealtimeNanos),
+          point.distanceDeltaMeters,
+          point.cumulativeDistanceMeters,
+          point.derivedSpeedMps,
+          point.shadowWeightedLatitude,
+          point.shadowWeightedLongitude,
+          point.shadowWeightedDeltaMeters,
+          point.shadowWeightedCumulativeMeters,
+          point.shadowKalmanLatitude,
+          point.shadowKalmanLongitude,
+          point.shadowKalmanDeltaMeters,
+          point.shadowKalmanCumulativeMeters,
+          point.shadowFilterReset ? 1 : 0,
+        );
+
+        // Upgrade-safe replay: V28 rows can already exist without native_sequence.
+        // Attach the Native authority metadata once so a later React restart can
+        // resume from MAX(native_sequence) instead of replaying the same journal line forever.
+        if (insert.changes === 0) {
+          const legacyRow = await db.getFirstAsync<{ id: number; native_sequence: number | null }>(
+            `SELECT id,native_sequence FROM track_points
+             WHERE workout_id=? AND timestamp=? AND latitude=? AND longitude=?
+             LIMIT 1`,
+            workoutId,
+            point.timestamp,
+            point.latitude,
+            point.longitude,
+          );
+          if (legacyRow && legacyRow.native_sequence == null) {
+            const sequenceAlreadyStored = await db.getFirstAsync<{ id: number }>(
+              "SELECT id FROM track_points WHERE workout_id=? AND native_sequence=? LIMIT 1",
+              workoutId,
+              Math.round(point.sequence),
+            );
+            if (!sequenceAlreadyStored) {
+              await db.runAsync(
+                `UPDATE track_points SET
+                   segment_index=?, accuracy=?, speed=?, altitude=?, source='native', accepted=?, reject_reason=?,
+                   native_sequence=?, elapsed_realtime_nanos=?, distance_delta_meters=?, cumulative_distance_meters=?, derived_speed_mps=?,
+                   shadow_weighted_latitude=?, shadow_weighted_longitude=?, shadow_weighted_delta_meters=?, shadow_weighted_cumulative_meters=?,
+                   shadow_kalman_latitude=?, shadow_kalman_longitude=?, shadow_kalman_delta_meters=?, shadow_kalman_cumulative_meters=?, shadow_filter_reset=?
+                 WHERE id=? AND native_sequence IS NULL`,
+                point.segmentIndex,
+                point.accuracy,
+                point.speed,
+                point.altitude,
+                point.accepted ? 1 : 0,
+                point.rejectReason,
+                Math.round(point.sequence),
+                Math.round(point.elapsedRealtimeNanos),
+                point.distanceDeltaMeters,
+                point.cumulativeDistanceMeters,
+                point.derivedSpeedMps,
+                point.shadowWeightedLatitude,
+                point.shadowWeightedLongitude,
+                point.shadowWeightedDeltaMeters,
+                point.shadowWeightedCumulativeMeters,
+                point.shadowKalmanLatitude,
+                point.shadowKalmanLongitude,
+                point.shadowKalmanDeltaMeters,
+                point.shadowKalmanCumulativeMeters,
+                point.shadowFilterReset ? 1 : 0,
+                legacyRow.id,
+              );
+            }
+          }
+        }
+      }
+
+      if (snapshot?.workoutId === workoutId) {
+        const segment = Math.max(0, Math.round(snapshot.segmentIndex));
+        await db.runAsync(
+          `UPDATE workouts SET
+             distance_meters=?,
+             gps_weighted_shadow_meters=?,
+             gps_kalman_shadow_meters=?,
+             max_speed_mps=?,
+             current_segment_index=CASE WHEN current_segment_index < ? THEN ? ELSE current_segment_index END
+           WHERE id=? AND status IN ('active','paused')`,
+          Math.max(0, snapshot.distanceMeters),
+          Math.max(0, snapshot.shadowWeightedDistanceMeters),
+          Math.max(0, snapshot.shadowKalmanDistanceMeters),
+          Math.max(0, snapshot.maxSpeedMps),
+          segment,
+          segment,
+          workoutId,
+        );
+      }
     });
     return readWorkoutSession(workoutId);
   });

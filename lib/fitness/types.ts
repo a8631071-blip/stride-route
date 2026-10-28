@@ -1,6 +1,6 @@
 export type WorkoutStatus = "active" | "paused" | "completed";
 export type WorkoutType = "walk" | "run" | "shopping" | "bike";
-export type RoutePointSource = "foreground" | "background" | "initial";
+export type RoutePointSource = "foreground" | "background" | "initial" | "native";
 export type DailyStepSource = "health_connect" | "sensor" | "legacy";
 export type VoiceAnnouncementInterval = 5 | 10 | 15;
 
@@ -24,6 +24,8 @@ export type WorkoutSession = {
   pausedSeconds: number;
   durationSeconds: number;
   distanceMeters: number;
+  gpsWeightedShadowMeters: number | null;
+  gpsKalmanShadowMeters: number | null;
   steps: number;
   maxSpeedMps: number;
   currentSegmentIndex: number;

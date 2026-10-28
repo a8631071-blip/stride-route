@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@raw/ai_*,@raw/calorie_*,@raw/decimal_*,@raw/distance_*,@raw/enc_*,@raw/integer_*,@raw/num_*,@raw/pause_*,@raw/phrase_*,@raw/speed_*,@raw/state_*,@raw/steps_*,@raw/time_*,@raw/unit_*,@raw/word_*" />
